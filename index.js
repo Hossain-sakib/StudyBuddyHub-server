@@ -54,9 +54,9 @@ async function run() {
     const assignmentCollection = client
       .db("assignmentsDB")
       .collection("assignments");
-    const myAssignmentCollection = client
-      .db("myAssignmentsDB")
-      .collection("myAssignments");
+    const submittedAssignmentCollection = client
+      .db("assignmentsDB")
+      .collection("submittedAssignments");
 
     // all assignments
     // get all assignment
@@ -94,11 +94,9 @@ async function run() {
         return res.status(404).json({ message: "Assignment not found" });
       }
       if (assignment.email !== userEmail) {
-        return res
-          .status(403)
-          .json({
-            message: "Unauthorized: You are not the creator of this assignment",
-          });
+        return res.status(403).json({
+          message: "Unauthorized: You are not the creator of this assignment",
+        });
       }
       const assignmentUpdate = {
         $set: {
@@ -119,8 +117,6 @@ async function run() {
       res.send(result);
     });
 
-    
-
     // delete specific assinment
     app.delete("/assignments/:id", async (req, res) => {
       const id = req.params.id;
@@ -140,19 +136,24 @@ async function run() {
       res.send(result);
     });
 
-    // my assignment
-
-    // app.post("/myassignment", async (req, res) => {
-    //   const item = req.body;
-    //   console.log(item);
-    //   const result = await myAssignmentCollection.insertOne(item);
-    //   res.send(result);
-    // });
-
-    // app.get("/myassignment", async (req, res) => {
-    //   const result = await myAssignmentCollection.find().toArray();
-    //   res.send(result);
-    // });
+    // submitted assignment
+    // post submit
+    app.post("/submittedassignments", async (req, res) => {
+      const item = req.body;
+      console.log(item);
+      const result = await submittedAssignmentCollection.insertOne(item);
+      res.send(result);
+    });
+   
+    // get specific submit
+    app.get("/submittedassignments", async (req, res) => {
+      let query = {};
+      if(req.query?.email){
+        query = {email: req.query.email}
+      }
+      const result = await submittedAssignmentCollection.find(query).toArray();
+      res.send(result);
+    });
 
     // app.delete("/myassignment/:id", async (req, res) => {
     //   const id = req.params.id;
@@ -184,13 +185,11 @@ async function run() {
     });
 
     await client.connect();
-    // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
     );
   } finally {
-    // Ensures that the client will close when you finish/error
     // await client.close();
   }
 }
