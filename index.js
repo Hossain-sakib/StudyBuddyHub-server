@@ -10,7 +10,11 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 // middlewares
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: [
+      "https://study-buddy-hub.web.app/",
+      "https://study-buddy-hub.firebaseapp.com/",
+      "http://localhost:5173",
+    ],
     credentials: true,
   })
 );
@@ -137,6 +141,7 @@ async function run() {
     });
 
     // submitted assignment
+
     // post submit
     app.post("/submittedassignments", async (req, res) => {
       const item = req.body;
@@ -160,13 +165,16 @@ async function run() {
       const filter = { _id: new ObjectId(id) };
       const markAssignment = req.body;
       const updateDoc = {
-        $set:{
-            status: markAssignment.status,
-            givenMark : markAssignment.givenMark,
-            feedback: markAssignment.feedback
-        }
-      }
-      const result = await submittedAssignmentCollection.updateOne(filter,updateDoc);
+        $set: {
+          status: markAssignment.status,
+          givenMark: markAssignment.givenMark,
+          feedback: markAssignment.feedback,
+        },
+      };
+      const result = await submittedAssignmentCollection.updateOne(
+        filter,
+        updateDoc
+      );
       res.send(result);
     });
 
