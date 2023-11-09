@@ -144,23 +144,31 @@ async function run() {
       const result = await submittedAssignmentCollection.insertOne(item);
       res.send(result);
     });
-   
+
     // get specific submit
     app.get("/submittedassignments", async (req, res) => {
       let query = {};
-      if(req.query?.email){
-        query = {email: req.query.email}
+      if (req.query?.email) {
+        query = { email: req.query.email };
       }
       const result = await submittedAssignmentCollection.find(query).toArray();
       res.send(result);
     });
 
-    // app.delete("/myassignment/:id", async (req, res) => {
-    //   const id = req.params.id;
-    //   const query = { _id: new ObjectId(id) };
-    //   const result = await myAssignmentCollection.deleteOne(query);
-    //   res.send(result);
-    // });
+    app.patch("/submittedassignments/:id", async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const markAssignment = req.body;
+      const updateDoc = {
+        $set:{
+            status: markAssignment.status,
+            givenMark : markAssignment.givenMark,
+            feedback: markAssignment.feedback
+        }
+      }
+      const result = await submittedAssignmentCollection.updateOne(filter,updateDoc);
+      res.send(result);
+    });
 
     // auth
     app.post("/jwt", logger, async (req, res) => {
