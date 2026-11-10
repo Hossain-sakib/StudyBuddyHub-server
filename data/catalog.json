@@ -1,0 +1,326 @@
+[
+  {
+    "id": "design",
+    "title": "UI Design Fundamentals",
+    "category": "Design",
+    "level": "Beginner",
+    "color": "purple",
+    "icon": "design",
+    "teacher": "Emma Wilson",
+    "duration": "2h 40m",
+    "description": "Turn your ideas into interfaces people love. Learn visual hierarchy, color, and layout through practical exercises.",
+    "lessons": [
+      {
+        "title": "Start with visual hierarchy",
+        "body": "Visual hierarchy helps people understand what matters first. Give your primary heading the most emphasis, group related content with spacing, and make one main action clear.\n\nTry it: sketch a sign-up screen. Use size, contrast, and spacing to guide a visitor from the heading to the form and then to the submit button."
+      },
+      {
+        "title": "Build a thoughtful color palette",
+        "body": "Choose a primary color for key actions, neutral tones for content, and semantic colors for feedback. Check that normal text has a contrast ratio of at least 4.5:1 against its background.\n\nTry it: pick a primary color and create three neutral surfaces. Test each text and background pair with a contrast checker."
+      },
+      {
+        "title": "Create layouts that breathe",
+        "body": "Use a spacing scale such as 4, 8, 16, 24, and 32 pixels. Consistent gaps make a layout feel intentional. Keep reading lines comfortably short and use grids to align related elements.\n\nTry it: design a course card at mobile and desktop widths. Keep the title, description, and main action easy to scan."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the main purpose of visual hierarchy?",
+        "choices": [
+          "Use as many colors as possible",
+          "Guide attention in order of importance",
+          "Make every element the same size"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What is the minimum recommended contrast for normal text?",
+        "choices": [
+          "2:1",
+          "3:1",
+          "4.5:1"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What helps create consistent layouts?",
+        "choices": [
+          "A spacing scale",
+          "Random margins",
+          "Removing all whitespace"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "web",
+    "title": "Build Your First Website",
+    "category": "Development",
+    "level": "Beginner",
+    "color": "orange",
+    "icon": "code",
+    "teacher": "Alex Morgan",
+    "duration": "3h 15m",
+    "description": "From a blank page to your first responsive website. Discover HTML, CSS, and the web one small step at a time.",
+    "lessons": [
+      {
+        "title": "Give your page structure",
+        "body": "HTML describes the meaning of content. Use a header for the introduction, nav for navigation, main for primary content, and footer for supporting links. Headings should follow a logical order.\n\nTry it: write a simple page with one h1, two sections with h2 headings, and a navigation link to each section."
+      },
+      {
+        "title": "Style with CSS",
+        "body": "CSS controls presentation. A selector chooses elements, and declarations set properties like color, padding, and display. Use classes for reusable styles.\n\nTry it: create a .card class with padding, a border radius, and a background. Apply it to three different sections."
+      },
+      {
+        "title": "Make it responsive",
+        "body": "Start with a single-column mobile layout. Add a media query when the content has enough room for multiple columns. Flexible grids and max-width prevent content from becoming too wide.\n\nTry it: use display: grid and grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) for a responsive set of cards."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Which element holds the primary page content?",
+        "choices": [
+          "footer",
+          "main",
+          "nav"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which language controls visual presentation?",
+        "choices": [
+          "HTML",
+          "SQL",
+          "CSS"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What helps a layout adapt to screen widths?",
+        "choices": [
+          "Media queries",
+          "Fixed widths everywhere",
+          "More headings"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "productivity",
+    "title": "Learn Smarter, Not Harder",
+    "category": "Personal growth",
+    "level": "All levels",
+    "color": "green",
+    "icon": "growth",
+    "teacher": "Sofia Chen",
+    "duration": "1h 20m",
+    "description": "Build a learning routine that sticks with active recall, focused study sessions, and realistic goals.",
+    "lessons": [
+      {
+        "title": "Practice active recall",
+        "body": "Retrieving information from memory strengthens learning more than simply rereading it. After a lesson, close your notes and explain the key idea in your own words.\n\nTry it: write three questions about something you learned today. Answer them without looking, then check your answers."
+      },
+      {
+        "title": "Space your practice",
+        "body": "Reviewing material over multiple days helps you retain it. Revisit a topic after one day, several days, and a week. Spend extra time on concepts you find difficult.\n\nTry it: schedule three short reviews of your most recent lesson over the next week."
+      },
+      {
+        "title": "Design your study routine",
+        "body": "A useful goal is specific and achievable. Choose a small daily action, attach it to an existing habit, and keep distractions out of reach. Take breaks to maintain focus.\n\nTry it: set a 25-minute timer, put your phone away, and finish one lesson. Write down one thing you learned before taking a break."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Which activity is active recall?",
+        "choices": [
+          "Rereading notes",
+          "Highlighting every line",
+          "Explaining an idea from memory"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What does spaced practice mean?",
+        "choices": [
+          "Reviewing over multiple days",
+          "Studying only once",
+          "Studying without breaks"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which goal is most actionable?",
+        "choices": [
+          "Learn everything",
+          "Complete one lesson after breakfast",
+          "Study whenever"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "id": "javascript",
+    "title": "JavaScript, Step by Step",
+    "category": "Development",
+    "level": "Intermediate",
+    "color": "pink",
+    "icon": "code",
+    "teacher": "Alex Morgan",
+    "duration": "2h 10m",
+    "description": "Bring your websites to life with variables, functions, and interactive events.",
+    "lessons": [
+      {
+        "title": "Variables and values",
+        "body": "Use const for bindings that do not need reassignment and let for bindings that do. JavaScript supports strings, numbers, booleans, objects, and other value types.\n\nTry it: create a const named courseTitle with a string value and a let named completedLessons initialized to 0. Increase completedLessons by one."
+      },
+      {
+        "title": "Functions that do one thing",
+        "body": "Functions package reusable behavior. Give them meaningful names and pass inputs as parameters. Return values instead of relying on shared mutable state when possible.\n\nTry it: write a function percentage(completed, total) that returns the completion percentage. Handle the case where total is zero."
+      },
+      {
+        "title": "Listen for events",
+        "body": "Events let code respond to interactions. Use addEventListener in plain JavaScript or event props like onClick in React. Keep event handlers focused and update state to reflect changes.\n\nTry it: make a button that increments a counter and displays the new value on the page."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Which keyword is suitable for a binding that will be reassigned?",
+        "choices": [
+          "const",
+          "let",
+          "static"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "How can a function provide an output?",
+        "choices": [
+          "return",
+          "import",
+          "class"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which React prop handles a button click?",
+        "choices": [
+          "onHover",
+          "onSubmitOnly",
+          "onClick"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "communication",
+    "title": "Speak with Confidence",
+    "category": "Personal growth",
+    "level": "Beginner",
+    "color": "pink",
+    "icon": "growth",
+    "teacher": "Studybuddy studio",
+    "duration": "1h 30m",
+    "description": "Find your voice. Practice clear explanations, thoughtful questions, and confident presentations.",
+    "lessons": [
+      {
+        "title": "Make your message clear",
+        "body": "Start with the one idea you want people to remember. Put the main point first, then support it with a concrete example. Use short sentences and familiar words.\n\nTry it: explain something you learned recently in three sentences. Ask a friend which idea stood out."
+      },
+      {
+        "title": "Listen before you respond",
+        "body": "Active listening means paying attention to the meaning behind someone\u2019s words. Ask an open question, paraphrase the answer, and check your understanding before adding your own opinion.\n\nTry it: ask a buddy about a challenge they are facing. Summarize what you heard without immediately offering advice."
+      },
+      {
+        "title": "Prepare a short presentation",
+        "body": "A useful presentation has a clear opening, a small number of supporting points, and a specific conclusion. Practice aloud and time yourself. Leave room to breathe between ideas.\n\nTry it: deliver a two-minute explanation of a favorite topic. Record it, then choose one thing to improve on your next attempt."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What should a clear explanation begin with?",
+        "choices": [
+          "Every background detail",
+          "The main idea",
+          "An unrelated story"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Which response demonstrates active listening?",
+        "choices": [
+          "Interrupting with advice",
+          "Changing the subject",
+          "Paraphrasing and checking understanding"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What helps prepare a presentation?",
+        "choices": [
+          "Practicing aloud",
+          "Reading every slide silently once",
+          "Adding as many points as possible"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "data",
+    "title": "Make Sense of Everyday Data",
+    "category": "Development",
+    "level": "Beginner",
+    "color": "green",
+    "icon": "code",
+    "teacher": "Studybuddy studio",
+    "duration": "2h 00m",
+    "description": "Ask better questions, spot misleading charts, and turn everyday numbers into useful insights.",
+    "lessons": [
+      {
+        "title": "Start with a useful question",
+        "body": "Data is most helpful when it answers a specific question. Define what you want to know, which observations you need, and how you will measure them.\n\nTry it: ask whether your study routine is consistent. Record the date and minutes studied for one week, using the same unit each day."
+      },
+      {
+        "title": "Choose the right summary",
+        "body": "The mean is the sum divided by the number of observations. The median is the middle value after sorting. A very large or small observation can pull the mean away from a typical value.\n\nTry it: find the mean and median of 10, 15, 15, 20, and 90. Consider which better represents a typical study session."
+      },
+      {
+        "title": "Read charts with care",
+        "body": "Check a chart\u2019s axis labels, units, time range, and source before drawing conclusions. A truncated axis can exaggerate differences. A pattern between two measurements does not prove that one causes the other.\n\nTry it: find a chart in a news article and write down one conclusion it supports and one claim it cannot establish."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What should come before collecting data?",
+        "choices": [
+          "A specific question",
+          "A fancy chart",
+          "A conclusion"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "Which summary is often less affected by an extreme value?",
+        "choices": [
+          "The sum",
+          "The median",
+          "The mean"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Does correlation alone prove causation?",
+        "choices": [
+          "Always",
+          "Only with a colorful chart",
+          "No"
+        ],
+        "answer": 2
+      }
+    ]
+  }
+]
