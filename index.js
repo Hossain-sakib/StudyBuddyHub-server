@@ -636,7 +636,9 @@ async function initializeStorage() {
       !process.env.MONGODB_URI ||
       !process.env.CLIENT_ORIGINS)
   )
-    throw Object.assign(new Error("Production configuration is incomplete."), { code: "CONFIG_MISSING" });
+    throw Object.assign(new Error("Production configuration is incomplete."), {
+      code: "CONFIG_MISSING",
+    });
   if (process.env.MONGODB_URI) {
     mongo = new MongoClient(process.env.MONGODB_URI, {
       serverSelectionTimeoutMS: 10000,
