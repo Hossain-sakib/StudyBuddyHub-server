@@ -98,6 +98,7 @@ function initial(name) {
     completed: {},
     enrolled: ["design", "web"],
     quizzes: {},
+    bookmarks: [],
     assignments: [],
     messages: [],
     goal: 3,
@@ -184,6 +185,13 @@ function validCredentials(body) {
     body.password.length <= 128
   );
 }
+const notifyUser = require("./notifications")(app, {
+  authenticated,
+  handle,
+  storage: () => ({ db, fileData }),
+  persist,
+  getState,
+});
 app.get("/", (_, res) => res.send("StudyBuddy API is running"));
 app.get("/api/health", (_, res) =>
   res.json({
@@ -214,9 +222,9 @@ app.get(
           .find({ isSample: true }, { projection: { _id: 0, submissions: 0 } })
           .limit(3)
           .toArray()
-      : require("./seed-samples").sampleAssignments.map(
-          ({ submissions, ...item }) => item,
-        );
+      : require("./seed-samples")
+          .sampleAssignments.slice(0, 3)
+          .map(({ submissions, ...item }) => item);
     res.json({ challenges: items });
   }),
 );
@@ -286,6 +294,12 @@ app.post(
       }),
       cookieOptions(),
     );
+    await notifyUser(user.id, {
+      key: "welcome",
+      title: "Your next chapter starts here",
+      body: "Explore a course, try a quiz, and make yourself at home.",
+      target: "courses",
+    }).catch(() => {});
     res.status(201).json({ user: publicUser(user, state), state });
   }),
 );
@@ -394,6 +408,12 @@ app.post(
       }),
       cookieOptions(),
     );
+    await notifyUser(user.id, {
+      key: "welcome",
+      title: "Your next chapter starts here",
+      body: "Your account is ready. Discover something worth learning.",
+      target: "courses",
+    }).catch(() => {});
     res.json({ user: publicUser(user, state), state });
   }),
 );
@@ -409,7 +429,7 @@ app.get(
     res.json({ user: publicUser(req.user, state), state });
   }),
 );
-function validateState(input) {
+function validateState(input, availableCourses = catalog) {
   if (
     !input ||
     typeof input.name !== "string" ||
@@ -420,14 +440,17 @@ function validateState(input) {
     input.goal > 7
   )
     throw new Error("Invalid profile or weekly goal.");
-  const ids = new Set(catalog.map((c) => c.id));
+  const ids = new Set(availableCourses.map((c) => c.id));
   if (
     !Array.isArray(input.enrolled) ||
     input.enrolled.some((id) => !ids.has(id))
   )
     throw new Error("Invalid course enrollment.");
+  const bookmarks = input.bookmarks || [];
+  if (!Array.isArray(bookmarks) || bookmarks.some((id) => !ids.has(id)))
+    throw new Error("Invalid saved courses.");
   const completed = {};
-  for (const course of catalog) {
+  for (const course of availableCourses) {
     const list = input.completed?.[course.id] || [];
     if (
       !Array.isArray(list) ||
@@ -441,7 +464,7 @@ function validateState(input) {
     if (list.length) completed[course.id] = [...new Set(list)];
   }
   const quizzes = {};
-  for (const course of catalog) {
+  for (const course of availableCourses) {
     const q = input.quizzes?.[course.id];
     if (!q) continue;
     if (
@@ -506,6 +529,7 @@ function validateState(input) {
     name: input.name.trim(),
     goal: input.goal,
     enrolled: [...new Set(input.enrolled)],
+    bookmarks: [...new Set(bookmarks)],
     completed,
     quizzes,
     assignments,
@@ -519,11 +543,43 @@ app.put(
   handle(async (req, res) => {
     let state;
     try {
-      state = validateState(req.body);
+      const stored = db
+        ? await db.collection("courses").find({}).limit(100).toArray()
+        : [];
+      state = validateState(req.body, stored.length ? stored : catalog);
     } catch (error) {
       return res.status(400).json({ error: error.message });
     }
+    const previous = await getState(req.user.id, req.user.name);
     await putState(req.user.id, state);
+    for (const [id, result] of Object.entries(state.quizzes))
+      if (previous.quizzes[id]?.date !== result.date)
+        await notifyUser(req.user.id, {
+          key: `quiz:${id}:${result.date}`,
+          type: "achievement",
+          title: "Practice makes progress",
+          body: `You scored ${result.score}/${result.total} in your latest quiz.`,
+          target: "progress",
+        }).catch(() => {});
+    for (const id of state.enrolled) {
+      const length = (
+        db
+          ? await db.collection("courses").findOne({ id })
+          : catalog.find((c) => c.id === id)
+      )?.lessons?.length;
+      if (
+        length &&
+        state.completed[id]?.length === length &&
+        (previous.completed[id]?.length || 0) < length
+      )
+        await notifyUser(req.user.id, {
+          key: `course-complete:${id}`,
+          type: "achievement",
+          title: "A whole course. Look at you go!",
+          body: "Your completed course is recorded in My progress.",
+          target: "progress",
+        }).catch(() => {});
+    }
     res.json({ ok: true });
   }),
 );
@@ -598,12 +654,14 @@ require("./admin/routes")(app, {
   handle,
   storage: () => ({ db, fileData }),
   persist,
+  notifyUser,
 });
 require("./assignments")(app, {
   authenticated,
   handle,
   storage: () => ({ db, fileData }),
   persist,
+  notifyUser,
 });
 app.use((_, res) =>
   res.status(404).json({ error: "That endpoint does not exist." }),
@@ -656,6 +714,12 @@ async function initializeStorage() {
     await db
       .collection("auth_limits")
       .createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 });
+    await db
+      .collection("notifications")
+      .createIndex({ userId: 1, key: 1 }, { unique: true });
+    await db
+      .collection("notifications")
+      .createIndex({ userId: 1, createdAt: -1 });
     await db.collection("audit_logs").createIndex({ createdAt: -1 });
     await db.collection("cms_pages").createIndex({ slug: 1 }, { unique: true });
     await db.collection("courses").createIndex({ id: 1 }, { unique: true });

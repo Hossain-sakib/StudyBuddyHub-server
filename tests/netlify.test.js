@@ -36,7 +36,7 @@ function invoke(route, method = "GET", body, cookie) {
 }
 test("Netlify adapter routes /api and preserves authentication cookies", async () => {
   assert.equal((await invoke("/api/health")).statusCode, 200);
-  assert.equal(JSON.parse((await invoke("/api/courses")).body).length, 6);
+  assert.equal(JSON.parse((await invoke("/api/courses")).body).length, 18);
   assert.equal((await invoke("/api/session")).statusCode, 401);
   assert.equal(
     (await invoke("/.netlify/functions/api/api/health")).statusCode,

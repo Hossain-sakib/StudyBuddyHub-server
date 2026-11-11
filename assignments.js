@@ -1,7 +1,7 @@
 const crypto = require("node:crypto");
 module.exports = function registerAssignments(
   app,
-  { authenticated, handle, storage, persist },
+  { authenticated, handle, storage, persist, notifyUser },
 ) {
   function valid(body) {
     return (
@@ -74,12 +74,10 @@ module.exports = function registerAssignments(
     authenticated,
     handle(async (req, res) => {
       if (!valid(req.body))
-        return res
-          .status(400)
-          .json({
-            error:
-              "Enter an assignment title, topic, and a mark total between 1 and 1,000.",
-          });
+        return res.status(400).json({
+          error:
+            "Enter an assignment title, topic, and a mark total between 1 and 1,000.",
+        });
       const { title, description, marks, category, due } = req.body;
       const a = {
         id: crypto.randomUUID(),
@@ -113,12 +111,10 @@ module.exports = function registerAssignments(
         a.submissions.some((s) => s.grade !== null) &&
         req.body.marks !== a.marks
       )
-        return res
-          .status(409)
-          .json({
-            error:
-              "The mark total cannot change after grading. Create a new assignment instead.",
-          });
+        return res.status(409).json({
+          error:
+            "The mark total cannot change after grading. Create a new assignment instead.",
+        });
       const { title, description, marks, category, due } = req.body;
       const details = {
         title: title.trim(),
@@ -129,18 +125,16 @@ module.exports = function registerAssignments(
       };
       const { db, fileData } = storage();
       if (db) {
-        const result = await db
-          .collection("assignments")
-          .updateOne(
-            {
-              id: a.id,
-              marks: a.marks,
-              ...(marks !== a.marks
-                ? { "submissions.grade": { $not: { $type: "number" } } }
-                : {}),
-            },
-            { $set: details },
-          );
+        const result = await db.collection("assignments").updateOne(
+          {
+            id: a.id,
+            marks: a.marks,
+            ...(marks !== a.marks
+              ? { "submissions.grade": { $not: { $type: "number" } } }
+              : {}),
+          },
+          { $set: details },
+        );
         if (!result.matchedCount)
           return res
             .status(409)
@@ -181,23 +175,18 @@ module.exports = function registerAssignments(
       const a = await find(req.params.id);
       if (!a) return res.status(404).json({ error: "Assignment not found." });
       if (a.ownerId === req.user.id)
-        return res
-          .status(400)
-          .json({
-            error:
-              "You can review submissions to your own assignment. Choose another assignment to submit work.",
-          });
+        return res.status(400).json({
+          error:
+            "You can review submissions to your own assignment. Choose another assignment to submit work.",
+        });
       if (
         typeof req.body.text !== "string" ||
         !req.body.text.trim() ||
         req.body.text.length > 4000
       )
-        return res
-          .status(400)
-          .json({
-            error:
-              "Enter your work or a project link (up to 4,000 characters).",
-          });
+        return res.status(400).json({
+          error: "Enter your work or a project link (up to 4,000 characters).",
+        });
       const existing = a.submissions.find((s) => s.userId === req.user.id);
       if (existing?.grade !== null && existing)
         return res
@@ -214,23 +203,19 @@ module.exports = function registerAssignments(
       const { db, fileData } = storage();
       if (db) {
         if (existing) {
-          const result = await db
-            .collection("assignments")
-            .updateOne(
-              {
-                id: a.id,
-                submissions: {
-                  $elemMatch: { userId: req.user.id, grade: null },
-                },
+          const result = await db.collection("assignments").updateOne(
+            {
+              id: a.id,
+              submissions: {
+                $elemMatch: { userId: req.user.id, grade: null },
               },
-              { $set: { "submissions.$": submission } },
-            );
+            },
+            { $set: { "submissions.$": submission } },
+          );
           if (!result.matchedCount)
-            return res
-              .status(409)
-              .json({
-                error: "The assignment changed. Refresh and try again.",
-              });
+            return res.status(409).json({
+              error: "The assignment changed. Refresh and try again.",
+            });
         } else {
           const result = await db
             .collection("assignments")
@@ -239,11 +224,9 @@ module.exports = function registerAssignments(
               { $push: { submissions: submission } },
             );
           if (!result.matchedCount)
-            return res
-              .status(409)
-              .json({
-                error: "The assignment changed. Refresh and try again.",
-              });
+            return res.status(409).json({
+              error: "The assignment changed. Refresh and try again.",
+            });
         }
       } else {
         const current = (fileData.assignments || []).find((t) => t.id === a.id);
@@ -258,6 +241,14 @@ module.exports = function registerAssignments(
         else current.submissions.push(submission);
         await persist();
       }
+      if (a.ownerId !== "sample-studio")
+        await notifyUser(a.ownerId, {
+          key: `submission:${a.id}:${req.user.id}:${submission.submittedAt}`,
+          type: "assignment",
+          title: "New work to review",
+          body: `${req.user.name} submitted work for ${a.title}.`,
+          target: "shared-assignments",
+        }).catch(() => {});
       res.status(201).json({ ok: true });
     }),
   );
@@ -279,30 +270,26 @@ module.exports = function registerAssignments(
         typeof req.body.feedback !== "string" ||
         req.body.feedback.length > 2000
       )
-        return res
-          .status(400)
-          .json({
-            error: `Enter a mark from 0 to ${a.marks} and feedback up to 2,000 characters.`,
-          });
+        return res.status(400).json({
+          error: `Enter a mark from 0 to ${a.marks} and feedback up to 2,000 characters.`,
+        });
       if (!a.submissions.some((s) => s.userId === req.params.userId))
         return res.status(404).json({ error: "Submission not found." });
       const { db, fileData } = storage();
       if (db) {
-        const result = await db
-          .collection("assignments")
-          .updateOne(
-            {
-              id: a.id,
-              marks: a.marks,
-              "submissions.userId": req.params.userId,
+        const result = await db.collection("assignments").updateOne(
+          {
+            id: a.id,
+            marks: a.marks,
+            "submissions.userId": req.params.userId,
+          },
+          {
+            $set: {
+              "submissions.$.grade": req.body.grade,
+              "submissions.$.feedback": req.body.feedback,
             },
-            {
-              $set: {
-                "submissions.$.grade": req.body.grade,
-                "submissions.$.feedback": req.body.feedback,
-              },
-            },
-          );
+          },
+        );
         if (!result.matchedCount)
           return res
             .status(409)
@@ -315,6 +302,13 @@ module.exports = function registerAssignments(
         current.feedback = req.body.feedback;
         await persist();
       }
+      await notifyUser(req.params.userId, {
+        key: `feedback:${a.id}:${req.params.userId}:${req.body.grade}:${crypto.createHash("sha256").update(req.body.feedback).digest("hex").slice(0, 12)}`,
+        type: "feedback",
+        title: "Your feedback is ready",
+        body: `${a.title}: ${req.body.grade}/${a.marks} marks.`,
+        target: "shared-assignments",
+      }).catch(() => {});
       res.json({ ok: true });
     }),
   );

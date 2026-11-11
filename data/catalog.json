@@ -51,7 +51,8 @@
         ],
         "answer": 0
       }
-    ]
+    ],
+    "isSample": true
   },
   {
     "id": "web",
@@ -105,7 +106,8 @@
         ],
         "answer": 0
       }
-    ]
+    ],
+    "isSample": true
   },
   {
     "id": "productivity",
@@ -159,7 +161,8 @@
         ],
         "answer": 1
       }
-    ]
+    ],
+    "isSample": true
   },
   {
     "id": "javascript",
@@ -213,7 +216,8 @@
         ],
         "answer": 2
       }
-    ]
+    ],
+    "isSample": true
   },
   {
     "id": "communication",
@@ -232,7 +236,7 @@
       },
       {
         "title": "Listen before you respond",
-        "body": "Active listening means paying attention to the meaning behind someone\u2019s words. Ask an open question, paraphrase the answer, and check your understanding before adding your own opinion.\n\nTry it: ask a buddy about a challenge they are facing. Summarize what you heard without immediately offering advice."
+        "body": "Active listening means paying attention to the meaning behind someone’s words. Ask an open question, paraphrase the answer, and check your understanding before adding your own opinion.\n\nTry it: ask a buddy about a challenge they are facing. Summarize what you heard without immediately offering advice."
       },
       {
         "title": "Prepare a short presentation",
@@ -267,7 +271,8 @@
         ],
         "answer": 0
       }
-    ]
+    ],
+    "isSample": true
   },
   {
     "id": "data",
@@ -290,7 +295,7 @@
       },
       {
         "title": "Read charts with care",
-        "body": "Check a chart\u2019s axis labels, units, time range, and source before drawing conclusions. A truncated axis can exaggerate differences. A pattern between two measurements does not prove that one causes the other.\n\nTry it: find a chart in a news article and write down one conclusion it supports and one claim it cannot establish."
+        "body": "Check a chart’s axis labels, units, time range, and source before drawing conclusions. A truncated axis can exaggerate differences. A pattern between two measurements does not prove that one causes the other.\n\nTry it: find a chart in a news article and write down one conclusion it supports and one claim it cannot establish."
       }
     ],
     "quiz": [
@@ -318,6 +323,667 @@
           "Always",
           "Only with a colorful chart",
           "No"
+        ],
+        "answer": 2
+      }
+    ],
+    "isSample": true
+  },
+  {
+    "id": "demo-accessibility",
+    "title": "Designing for Everyone",
+    "category": "Design",
+    "level": "Beginner",
+    "icon": "design",
+    "color": "purple",
+    "teacher": "Studybuddy sample studio",
+    "duration": "1h 40m",
+    "description": "Make interfaces easier to use with keyboard navigation, clear labels, and thoughtful contrast.",
+    "isSample": true,
+    "lessons": [
+      {
+        "title": "Understand the core idea",
+        "body": "Accessible interfaces support different ways of seeing, moving, and understanding. Semantic structure, keyboard access, and useful labels help more people complete a task.\n\nThis course is sample educational content for exploring the platform."
+      },
+      {
+        "title": "Try a small practical exercise",
+        "body": "Test a simple form using only your keyboard. Label every input and make its focus state visible.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+      },
+      {
+        "title": "Reflect, improve, and share",
+        "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is a useful way to begin this practice?",
+        "choices": [
+          "Choose one small, clear task",
+          "Try to finish everything at once",
+          "Skip the basic idea"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What makes reflection useful?",
+        "choices": [
+          "Only counting time spent",
+          "Naming a specific result and next improvement",
+          "Avoiding anything that was difficult"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What helps when sharing feedback?",
+        "choices": [
+          "Vague judgments",
+          "Personal assumptions",
+          "An observation, its effect, and a useful next step"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "demo-layouts",
+    "title": "CSS Layouts That Work",
+    "category": "Development",
+    "level": "Beginner",
+    "icon": "code",
+    "color": "orange",
+    "teacher": "Studybuddy sample studio",
+    "duration": "2h 20m",
+    "description": "Build flexible page layouts with modern CSS grids and responsive spacing.",
+    "isSample": true,
+    "lessons": [
+      {
+        "title": "Understand the core idea",
+        "body": "A useful layout follows the content. Grid handles two-dimensional structure; flexbox arranges a row or column. Flexible tracks and breakpoints help content adapt without fixed device assumptions.\n\nThis course is sample educational content for exploring the platform."
+      },
+      {
+        "title": "Try a small practical exercise",
+        "body": "Sketch a single-column mobile page, then create a two-column layout when the content has enough room.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+      },
+      {
+        "title": "Reflect, improve, and share",
+        "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is a useful way to begin this practice?",
+        "choices": [
+          "Choose one small, clear task",
+          "Try to finish everything at once",
+          "Skip the basic idea"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What makes reflection useful?",
+        "choices": [
+          "Only counting time spent",
+          "Naming a specific result and next improvement",
+          "Avoiding anything that was difficult"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What helps when sharing feedback?",
+        "choices": [
+          "Vague judgments",
+          "Personal assumptions",
+          "An observation, its effect, and a useful next step"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "demo-react",
+    "title": "Your First React Components",
+    "category": "Development",
+    "level": "Beginner",
+    "icon": "code",
+    "color": "pink",
+    "teacher": "Studybuddy sample studio",
+    "duration": "1h 40m",
+    "description": "Break a small interface into reusable components and learn how props and state fit together.",
+    "isSample": true,
+    "lessons": [
+      {
+        "title": "Understand the core idea",
+        "body": "Components describe reusable interface pieces. Props carry inputs from a parent. State stores values that change in response to interaction and cause the interface to render again.\n\nThis course is sample educational content for exploring the platform."
+      },
+      {
+        "title": "Try a small practical exercise",
+        "body": "Build a counter with a heading, a button, and a state value. Pass the heading as a prop.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+      },
+      {
+        "title": "Reflect, improve, and share",
+        "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is a useful way to begin this practice?",
+        "choices": [
+          "Choose one small, clear task",
+          "Try to finish everything at once",
+          "Skip the basic idea"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What makes reflection useful?",
+        "choices": [
+          "Only counting time spent",
+          "Naming a specific result and next improvement",
+          "Avoiding anything that was difficult"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What helps when sharing feedback?",
+        "choices": [
+          "Vague judgments",
+          "Personal assumptions",
+          "An observation, its effect, and a useful next step"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "demo-git",
+    "title": "Git for Everyday Projects",
+    "category": "Development",
+    "level": "Beginner",
+    "icon": "code",
+    "color": "green",
+    "teacher": "Studybuddy sample studio",
+    "duration": "2h 20m",
+    "description": "Keep a clear project history with commits, branches, and small reviewable changes.",
+    "isSample": true,
+    "lessons": [
+      {
+        "title": "Understand the core idea",
+        "body": "Git records snapshots of a project. Small commits make changes easier to understand and undo. Branches let you prepare a change while keeping the main line stable.\n\nThis course is sample educational content for exploring the platform."
+      },
+      {
+        "title": "Try a small practical exercise",
+        "body": "Create a practice repository, commit a README, and make a separate branch for a small improvement.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+      },
+      {
+        "title": "Reflect, improve, and share",
+        "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is a useful way to begin this practice?",
+        "choices": [
+          "Choose one small, clear task",
+          "Try to finish everything at once",
+          "Skip the basic idea"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What makes reflection useful?",
+        "choices": [
+          "Only counting time spent",
+          "Naming a specific result and next improvement",
+          "Avoiding anything that was difficult"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What helps when sharing feedback?",
+        "choices": [
+          "Vague judgments",
+          "Personal assumptions",
+          "An observation, its effect, and a useful next step"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "demo-typography",
+    "title": "Typography with Personality",
+    "category": "Design",
+    "level": "Beginner",
+    "icon": "design",
+    "color": "orange",
+    "teacher": "Studybuddy sample studio",
+    "duration": "1h 40m",
+    "description": "Use type size, rhythm, and spacing to make content clear and expressive.",
+    "isSample": true,
+    "lessons": [
+      {
+        "title": "Understand the core idea",
+        "body": "Typography creates hierarchy and rhythm. A restrained type scale, comfortable line length, and enough contrast make content easier to read. Font choice should support the message.\n\nThis course is sample educational content for exploring the platform."
+      },
+      {
+        "title": "Try a small practical exercise",
+        "body": "Arrange a title, introduction, and body paragraph using one font family and three deliberate sizes.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+      },
+      {
+        "title": "Reflect, improve, and share",
+        "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is a useful way to begin this practice?",
+        "choices": [
+          "Choose one small, clear task",
+          "Try to finish everything at once",
+          "Skip the basic idea"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What makes reflection useful?",
+        "choices": [
+          "Only counting time spent",
+          "Naming a specific result and next improvement",
+          "Avoiding anything that was difficult"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What helps when sharing feedback?",
+        "choices": [
+          "Vague judgments",
+          "Personal assumptions",
+          "An observation, its effect, and a useful next step"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "demo-research",
+    "title": "Ask Better User Questions",
+    "category": "Design",
+    "level": "Beginner",
+    "icon": "design",
+    "color": "green",
+    "teacher": "Studybuddy sample studio",
+    "duration": "2h 20m",
+    "description": "Learn to listen, observe, and turn useful questions into better product decisions.",
+    "isSample": true,
+    "lessons": [
+      {
+        "title": "Understand the core idea",
+        "body": "Useful research questions focus on behavior and context rather than asking people to predict what they might do. Open questions and concrete examples reveal more than leading questions.\n\nThis course is sample educational content for exploring the platform."
+      },
+      {
+        "title": "Try a small practical exercise",
+        "body": "Ask someone to describe the last time they learned a new skill. Note their steps without suggesting an answer.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+      },
+      {
+        "title": "Reflect, improve, and share",
+        "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is a useful way to begin this practice?",
+        "choices": [
+          "Choose one small, clear task",
+          "Try to finish everything at once",
+          "Skip the basic idea"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What makes reflection useful?",
+        "choices": [
+          "Only counting time spent",
+          "Naming a specific result and next improvement",
+          "Avoiding anything that was difficult"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What helps when sharing feedback?",
+        "choices": [
+          "Vague judgments",
+          "Personal assumptions",
+          "An observation, its effect, and a useful next step"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "demo-writing",
+    "title": "Write Clearer Digital Content",
+    "category": "Personal growth",
+    "level": "Beginner",
+    "icon": "growth",
+    "color": "purple",
+    "teacher": "Studybuddy sample studio",
+    "duration": "1h 40m",
+    "description": "Make your writing simpler, warmer, and easier to act on.",
+    "isSample": true,
+    "lessons": [
+      {
+        "title": "Understand the core idea",
+        "body": "Clear writing begins with a reader and a purpose. Put the useful point early, choose familiar words, and use specific actions. Read the text aloud to catch unnecessary complexity.\n\nThis course is sample educational content for exploring the platform."
+      },
+      {
+        "title": "Try a small practical exercise",
+        "body": "Rewrite a long instruction as a short explanation followed by one clear next step.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+      },
+      {
+        "title": "Reflect, improve, and share",
+        "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is a useful way to begin this practice?",
+        "choices": [
+          "Choose one small, clear task",
+          "Try to finish everything at once",
+          "Skip the basic idea"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What makes reflection useful?",
+        "choices": [
+          "Only counting time spent",
+          "Naming a specific result and next improvement",
+          "Avoiding anything that was difficult"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What helps when sharing feedback?",
+        "choices": [
+          "Vague judgments",
+          "Personal assumptions",
+          "An observation, its effect, and a useful next step"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "demo-focus",
+    "title": "Build a Sustainable Focus Habit",
+    "category": "Personal growth",
+    "level": "Beginner",
+    "icon": "growth",
+    "color": "green",
+    "teacher": "Studybuddy sample studio",
+    "duration": "2h 20m",
+    "description": "Plan focused sessions, manage distractions, and build a routine you can repeat.",
+    "isSample": true,
+    "lessons": [
+      {
+        "title": "Understand the core idea",
+        "body": "Focus is easier when the next action is specific. Reduce avoidable interruptions, choose a manageable session length, and leave time for rest. Consistency matters more than a perfect streak.\n\nThis course is sample educational content for exploring the platform."
+      },
+      {
+        "title": "Try a small practical exercise",
+        "body": "Choose one task for a short focus session. Write the next step before you start and one reflection afterward.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+      },
+      {
+        "title": "Reflect, improve, and share",
+        "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is a useful way to begin this practice?",
+        "choices": [
+          "Choose one small, clear task",
+          "Try to finish everything at once",
+          "Skip the basic idea"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What makes reflection useful?",
+        "choices": [
+          "Only counting time spent",
+          "Naming a specific result and next improvement",
+          "Avoiding anything that was difficult"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What helps when sharing feedback?",
+        "choices": [
+          "Vague judgments",
+          "Personal assumptions",
+          "An observation, its effect, and a useful next step"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "demo-charts",
+    "title": "Tell a Story with Data",
+    "category": "Development",
+    "level": "Beginner",
+    "icon": "code",
+    "color": "purple",
+    "teacher": "Studybuddy sample studio",
+    "duration": "1h 40m",
+    "description": "Choose useful charts, label them honestly, and explain what the evidence supports.",
+    "isSample": true,
+    "lessons": [
+      {
+        "title": "Understand the core idea",
+        "body": "Choose a chart to match the question. Bars compare categories; lines show change over time. Labels, units, sources, and uncertainty are part of the explanation, not decoration.\n\nThis course is sample educational content for exploring the platform."
+      },
+      {
+        "title": "Try a small practical exercise",
+        "body": "Compare a small set of weekly study minutes with a labeled bar chart. Write one supported conclusion.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+      },
+      {
+        "title": "Reflect, improve, and share",
+        "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is a useful way to begin this practice?",
+        "choices": [
+          "Choose one small, clear task",
+          "Try to finish everything at once",
+          "Skip the basic idea"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What makes reflection useful?",
+        "choices": [
+          "Only counting time spent",
+          "Naming a specific result and next improvement",
+          "Avoiding anything that was difficult"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What helps when sharing feedback?",
+        "choices": [
+          "Vague judgments",
+          "Personal assumptions",
+          "An observation, its effect, and a useful next step"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "demo-planning",
+    "title": "From Idea to Small Project",
+    "category": "Personal growth",
+    "level": "Beginner",
+    "icon": "growth",
+    "color": "orange",
+    "teacher": "Studybuddy sample studio",
+    "duration": "2h 20m",
+    "description": "Turn an ambitious idea into a useful first version with achievable milestones.",
+    "isSample": true,
+    "lessons": [
+      {
+        "title": "Understand the core idea",
+        "body": "A small project begins with a clear outcome and a narrow first version. Separate essential needs from later improvements, identify dependencies, and review progress against observable results.\n\nThis course is sample educational content for exploring the platform."
+      },
+      {
+        "title": "Try a small practical exercise",
+        "body": "Describe a project in one sentence. Choose three milestones and define how you will know each one is complete.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+      },
+      {
+        "title": "Reflect, improve, and share",
+        "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is a useful way to begin this practice?",
+        "choices": [
+          "Choose one small, clear task",
+          "Try to finish everything at once",
+          "Skip the basic idea"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What makes reflection useful?",
+        "choices": [
+          "Only counting time spent",
+          "Naming a specific result and next improvement",
+          "Avoiding anything that was difficult"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What helps when sharing feedback?",
+        "choices": [
+          "Vague judgments",
+          "Personal assumptions",
+          "An observation, its effect, and a useful next step"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "demo-feedback",
+    "title": "Give Feedback That Helps",
+    "category": "Personal growth",
+    "level": "Beginner",
+    "icon": "growth",
+    "color": "pink",
+    "teacher": "Studybuddy sample studio",
+    "duration": "1h 40m",
+    "description": "Practice useful, specific feedback that supports another person’s next step.",
+    "isSample": true,
+    "lessons": [
+      {
+        "title": "Understand the core idea",
+        "body": "Helpful feedback describes an observable choice, explains its effect, and offers a possible next step. Ask about intent before assuming a mistake, and leave room for a different solution.\n\nThis course is sample educational content for exploring the platform."
+      },
+      {
+        "title": "Try a small practical exercise",
+        "body": "Review a sample interface. Name one effective choice and one focused improvement, each with a reason.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+      },
+      {
+        "title": "Reflect, improve, and share",
+        "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is a useful way to begin this practice?",
+        "choices": [
+          "Choose one small, clear task",
+          "Try to finish everything at once",
+          "Skip the basic idea"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What makes reflection useful?",
+        "choices": [
+          "Only counting time spent",
+          "Naming a specific result and next improvement",
+          "Avoiding anything that was difficult"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What helps when sharing feedback?",
+        "choices": [
+          "Vague judgments",
+          "Personal assumptions",
+          "An observation, its effect, and a useful next step"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "id": "demo-systems",
+    "title": "Design a Tiny Design System",
+    "category": "Design",
+    "level": "Beginner",
+    "icon": "design",
+    "color": "pink",
+    "teacher": "Studybuddy sample studio",
+    "duration": "2h 20m",
+    "description": "Create a small set of reusable colors, spacing, and interface components.",
+    "isSample": true,
+    "lessons": [
+      {
+        "title": "Understand the core idea",
+        "body": "A design system is a set of shared decisions. Tokens capture values such as color and spacing; components apply them consistently. Document when a pattern should be used as well as how it looks.\n\nThis course is sample educational content for exploring the platform."
+      },
+      {
+        "title": "Try a small practical exercise",
+        "body": "Define a spacing scale, two button states, and a form input. Check consistency across a small screen.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+      },
+      {
+        "title": "Reflect, improve, and share",
+        "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is a useful way to begin this practice?",
+        "choices": [
+          "Choose one small, clear task",
+          "Try to finish everything at once",
+          "Skip the basic idea"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "What makes reflection useful?",
+        "choices": [
+          "Only counting time spent",
+          "Naming a specific result and next improvement",
+          "Avoiding anything that was difficult"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What helps when sharing feedback?",
+        "choices": [
+          "Vague judgments",
+          "Personal assumptions",
+          "An observation, its effect, and a useful next step"
         ],
         "answer": 2
       }

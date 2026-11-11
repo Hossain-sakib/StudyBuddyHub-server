@@ -1,0 +1,2892 @@
+{
+  "version": 2,
+  "total": 174,
+  "collections": {
+    "courses": [
+      {
+        "id": "design",
+        "title": "UI Design Fundamentals",
+        "category": "Design",
+        "level": "Beginner",
+        "color": "purple",
+        "icon": "design",
+        "teacher": "Emma Wilson",
+        "duration": "2h 40m",
+        "description": "Turn your ideas into interfaces people love. Learn visual hierarchy, color, and layout through practical exercises.",
+        "lessons": [
+          {
+            "title": "Start with visual hierarchy",
+            "body": "Visual hierarchy helps people understand what matters first. Give your primary heading the most emphasis, group related content with spacing, and make one main action clear.\n\nTry it: sketch a sign-up screen. Use size, contrast, and spacing to guide a visitor from the heading to the form and then to the submit button."
+          },
+          {
+            "title": "Build a thoughtful color palette",
+            "body": "Choose a primary color for key actions, neutral tones for content, and semantic colors for feedback. Check that normal text has a contrast ratio of at least 4.5:1 against its background.\n\nTry it: pick a primary color and create three neutral surfaces. Test each text and background pair with a contrast checker."
+          },
+          {
+            "title": "Create layouts that breathe",
+            "body": "Use a spacing scale such as 4, 8, 16, 24, and 32 pixels. Consistent gaps make a layout feel intentional. Keep reading lines comfortably short and use grids to align related elements.\n\nTry it: design a course card at mobile and desktop widths. Keep the title, description, and main action easy to scan."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What is the main purpose of visual hierarchy?",
+            "choices": [
+              "Use as many colors as possible",
+              "Guide attention in order of importance",
+              "Make every element the same size"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What is the minimum recommended contrast for normal text?",
+            "choices": [
+              "2:1",
+              "3:1",
+              "4.5:1"
+            ],
+            "answer": 2
+          },
+          {
+            "question": "What helps create consistent layouts?",
+            "choices": [
+              "A spacing scale",
+              "Random margins",
+              "Removing all whitespace"
+            ],
+            "answer": 0
+          }
+        ],
+        "isSample": true
+      },
+      {
+        "id": "web",
+        "title": "Build Your First Website",
+        "category": "Development",
+        "level": "Beginner",
+        "color": "orange",
+        "icon": "code",
+        "teacher": "Alex Morgan",
+        "duration": "3h 15m",
+        "description": "From a blank page to your first responsive website. Discover HTML, CSS, and the web one small step at a time.",
+        "lessons": [
+          {
+            "title": "Give your page structure",
+            "body": "HTML describes the meaning of content. Use a header for the introduction, nav for navigation, main for primary content, and footer for supporting links. Headings should follow a logical order.\n\nTry it: write a simple page with one h1, two sections with h2 headings, and a navigation link to each section."
+          },
+          {
+            "title": "Style with CSS",
+            "body": "CSS controls presentation. A selector chooses elements, and declarations set properties like color, padding, and display. Use classes for reusable styles.\n\nTry it: create a .card class with padding, a border radius, and a background. Apply it to three different sections."
+          },
+          {
+            "title": "Make it responsive",
+            "body": "Start with a single-column mobile layout. Add a media query when the content has enough room for multiple columns. Flexible grids and max-width prevent content from becoming too wide.\n\nTry it: use display: grid and grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) for a responsive set of cards."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "Which element holds the primary page content?",
+            "choices": [
+              "footer",
+              "main",
+              "nav"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "Which language controls visual presentation?",
+            "choices": [
+              "HTML",
+              "SQL",
+              "CSS"
+            ],
+            "answer": 2
+          },
+          {
+            "question": "What helps a layout adapt to screen widths?",
+            "choices": [
+              "Media queries",
+              "Fixed widths everywhere",
+              "More headings"
+            ],
+            "answer": 0
+          }
+        ],
+        "isSample": true
+      },
+      {
+        "id": "productivity",
+        "title": "Learn Smarter, Not Harder",
+        "category": "Personal growth",
+        "level": "All levels",
+        "color": "green",
+        "icon": "growth",
+        "teacher": "Sofia Chen",
+        "duration": "1h 20m",
+        "description": "Build a learning routine that sticks with active recall, focused study sessions, and realistic goals.",
+        "lessons": [
+          {
+            "title": "Practice active recall",
+            "body": "Retrieving information from memory strengthens learning more than simply rereading it. After a lesson, close your notes and explain the key idea in your own words.\n\nTry it: write three questions about something you learned today. Answer them without looking, then check your answers."
+          },
+          {
+            "title": "Space your practice",
+            "body": "Reviewing material over multiple days helps you retain it. Revisit a topic after one day, several days, and a week. Spend extra time on concepts you find difficult.\n\nTry it: schedule three short reviews of your most recent lesson over the next week."
+          },
+          {
+            "title": "Design your study routine",
+            "body": "A useful goal is specific and achievable. Choose a small daily action, attach it to an existing habit, and keep distractions out of reach. Take breaks to maintain focus.\n\nTry it: set a 25-minute timer, put your phone away, and finish one lesson. Write down one thing you learned before taking a break."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "Which activity is active recall?",
+            "choices": [
+              "Rereading notes",
+              "Highlighting every line",
+              "Explaining an idea from memory"
+            ],
+            "answer": 2
+          },
+          {
+            "question": "What does spaced practice mean?",
+            "choices": [
+              "Reviewing over multiple days",
+              "Studying only once",
+              "Studying without breaks"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "Which goal is most actionable?",
+            "choices": [
+              "Learn everything",
+              "Complete one lesson after breakfast",
+              "Study whenever"
+            ],
+            "answer": 1
+          }
+        ],
+        "isSample": true
+      },
+      {
+        "id": "javascript",
+        "title": "JavaScript, Step by Step",
+        "category": "Development",
+        "level": "Intermediate",
+        "color": "pink",
+        "icon": "code",
+        "teacher": "Alex Morgan",
+        "duration": "2h 10m",
+        "description": "Bring your websites to life with variables, functions, and interactive events.",
+        "lessons": [
+          {
+            "title": "Variables and values",
+            "body": "Use const for bindings that do not need reassignment and let for bindings that do. JavaScript supports strings, numbers, booleans, objects, and other value types.\n\nTry it: create a const named courseTitle with a string value and a let named completedLessons initialized to 0. Increase completedLessons by one."
+          },
+          {
+            "title": "Functions that do one thing",
+            "body": "Functions package reusable behavior. Give them meaningful names and pass inputs as parameters. Return values instead of relying on shared mutable state when possible.\n\nTry it: write a function percentage(completed, total) that returns the completion percentage. Handle the case where total is zero."
+          },
+          {
+            "title": "Listen for events",
+            "body": "Events let code respond to interactions. Use addEventListener in plain JavaScript or event props like onClick in React. Keep event handlers focused and update state to reflect changes.\n\nTry it: make a button that increments a counter and displays the new value on the page."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "Which keyword is suitable for a binding that will be reassigned?",
+            "choices": [
+              "const",
+              "let",
+              "static"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "How can a function provide an output?",
+            "choices": [
+              "return",
+              "import",
+              "class"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "Which React prop handles a button click?",
+            "choices": [
+              "onHover",
+              "onSubmitOnly",
+              "onClick"
+            ],
+            "answer": 2
+          }
+        ],
+        "isSample": true
+      },
+      {
+        "id": "communication",
+        "title": "Speak with Confidence",
+        "category": "Personal growth",
+        "level": "Beginner",
+        "color": "pink",
+        "icon": "growth",
+        "teacher": "Studybuddy studio",
+        "duration": "1h 30m",
+        "description": "Find your voice. Practice clear explanations, thoughtful questions, and confident presentations.",
+        "lessons": [
+          {
+            "title": "Make your message clear",
+            "body": "Start with the one idea you want people to remember. Put the main point first, then support it with a concrete example. Use short sentences and familiar words.\n\nTry it: explain something you learned recently in three sentences. Ask a friend which idea stood out."
+          },
+          {
+            "title": "Listen before you respond",
+            "body": "Active listening means paying attention to the meaning behind someone’s words. Ask an open question, paraphrase the answer, and check your understanding before adding your own opinion.\n\nTry it: ask a buddy about a challenge they are facing. Summarize what you heard without immediately offering advice."
+          },
+          {
+            "title": "Prepare a short presentation",
+            "body": "A useful presentation has a clear opening, a small number of supporting points, and a specific conclusion. Practice aloud and time yourself. Leave room to breathe between ideas.\n\nTry it: deliver a two-minute explanation of a favorite topic. Record it, then choose one thing to improve on your next attempt."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What should a clear explanation begin with?",
+            "choices": [
+              "Every background detail",
+              "The main idea",
+              "An unrelated story"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "Which response demonstrates active listening?",
+            "choices": [
+              "Interrupting with advice",
+              "Changing the subject",
+              "Paraphrasing and checking understanding"
+            ],
+            "answer": 2
+          },
+          {
+            "question": "What helps prepare a presentation?",
+            "choices": [
+              "Practicing aloud",
+              "Reading every slide silently once",
+              "Adding as many points as possible"
+            ],
+            "answer": 0
+          }
+        ],
+        "isSample": true
+      },
+      {
+        "id": "data",
+        "title": "Make Sense of Everyday Data",
+        "category": "Development",
+        "level": "Beginner",
+        "color": "green",
+        "icon": "code",
+        "teacher": "Studybuddy studio",
+        "duration": "2h 00m",
+        "description": "Ask better questions, spot misleading charts, and turn everyday numbers into useful insights.",
+        "lessons": [
+          {
+            "title": "Start with a useful question",
+            "body": "Data is most helpful when it answers a specific question. Define what you want to know, which observations you need, and how you will measure them.\n\nTry it: ask whether your study routine is consistent. Record the date and minutes studied for one week, using the same unit each day."
+          },
+          {
+            "title": "Choose the right summary",
+            "body": "The mean is the sum divided by the number of observations. The median is the middle value after sorting. A very large or small observation can pull the mean away from a typical value.\n\nTry it: find the mean and median of 10, 15, 15, 20, and 90. Consider which better represents a typical study session."
+          },
+          {
+            "title": "Read charts with care",
+            "body": "Check a chart’s axis labels, units, time range, and source before drawing conclusions. A truncated axis can exaggerate differences. A pattern between two measurements does not prove that one causes the other.\n\nTry it: find a chart in a news article and write down one conclusion it supports and one claim it cannot establish."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What should come before collecting data?",
+            "choices": [
+              "A specific question",
+              "A fancy chart",
+              "A conclusion"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "Which summary is often less affected by an extreme value?",
+            "choices": [
+              "The sum",
+              "The median",
+              "The mean"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "Does correlation alone prove causation?",
+            "choices": [
+              "Always",
+              "Only with a colorful chart",
+              "No"
+            ],
+            "answer": 2
+          }
+        ],
+        "isSample": true
+      },
+      {
+        "id": "demo-accessibility",
+        "title": "Designing for Everyone",
+        "category": "Design",
+        "level": "Beginner",
+        "icon": "design",
+        "color": "purple",
+        "teacher": "Studybuddy sample studio",
+        "duration": "1h 40m",
+        "description": "Make interfaces easier to use with keyboard navigation, clear labels, and thoughtful contrast.",
+        "isSample": true,
+        "lessons": [
+          {
+            "title": "Understand the core idea",
+            "body": "Accessible interfaces support different ways of seeing, moving, and understanding. Semantic structure, keyboard access, and useful labels help more people complete a task.\n\nThis course is sample educational content for exploring the platform."
+          },
+          {
+            "title": "Try a small practical exercise",
+            "body": "Test a simple form using only your keyboard. Label every input and make its focus state visible.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+          },
+          {
+            "title": "Reflect, improve, and share",
+            "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What is a useful way to begin this practice?",
+            "choices": [
+              "Choose one small, clear task",
+              "Try to finish everything at once",
+              "Skip the basic idea"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What makes reflection useful?",
+            "choices": [
+              "Only counting time spent",
+              "Naming a specific result and next improvement",
+              "Avoiding anything that was difficult"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What helps when sharing feedback?",
+            "choices": [
+              "Vague judgments",
+              "Personal assumptions",
+              "An observation, its effect, and a useful next step"
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      {
+        "id": "demo-layouts",
+        "title": "CSS Layouts That Work",
+        "category": "Development",
+        "level": "Beginner",
+        "icon": "code",
+        "color": "orange",
+        "teacher": "Studybuddy sample studio",
+        "duration": "2h 20m",
+        "description": "Build flexible page layouts with modern CSS grids and responsive spacing.",
+        "isSample": true,
+        "lessons": [
+          {
+            "title": "Understand the core idea",
+            "body": "A useful layout follows the content. Grid handles two-dimensional structure; flexbox arranges a row or column. Flexible tracks and breakpoints help content adapt without fixed device assumptions.\n\nThis course is sample educational content for exploring the platform."
+          },
+          {
+            "title": "Try a small practical exercise",
+            "body": "Sketch a single-column mobile page, then create a two-column layout when the content has enough room.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+          },
+          {
+            "title": "Reflect, improve, and share",
+            "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What is a useful way to begin this practice?",
+            "choices": [
+              "Choose one small, clear task",
+              "Try to finish everything at once",
+              "Skip the basic idea"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What makes reflection useful?",
+            "choices": [
+              "Only counting time spent",
+              "Naming a specific result and next improvement",
+              "Avoiding anything that was difficult"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What helps when sharing feedback?",
+            "choices": [
+              "Vague judgments",
+              "Personal assumptions",
+              "An observation, its effect, and a useful next step"
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      {
+        "id": "demo-react",
+        "title": "Your First React Components",
+        "category": "Development",
+        "level": "Beginner",
+        "icon": "code",
+        "color": "pink",
+        "teacher": "Studybuddy sample studio",
+        "duration": "1h 40m",
+        "description": "Break a small interface into reusable components and learn how props and state fit together.",
+        "isSample": true,
+        "lessons": [
+          {
+            "title": "Understand the core idea",
+            "body": "Components describe reusable interface pieces. Props carry inputs from a parent. State stores values that change in response to interaction and cause the interface to render again.\n\nThis course is sample educational content for exploring the platform."
+          },
+          {
+            "title": "Try a small practical exercise",
+            "body": "Build a counter with a heading, a button, and a state value. Pass the heading as a prop.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+          },
+          {
+            "title": "Reflect, improve, and share",
+            "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What is a useful way to begin this practice?",
+            "choices": [
+              "Choose one small, clear task",
+              "Try to finish everything at once",
+              "Skip the basic idea"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What makes reflection useful?",
+            "choices": [
+              "Only counting time spent",
+              "Naming a specific result and next improvement",
+              "Avoiding anything that was difficult"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What helps when sharing feedback?",
+            "choices": [
+              "Vague judgments",
+              "Personal assumptions",
+              "An observation, its effect, and a useful next step"
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      {
+        "id": "demo-git",
+        "title": "Git for Everyday Projects",
+        "category": "Development",
+        "level": "Beginner",
+        "icon": "code",
+        "color": "green",
+        "teacher": "Studybuddy sample studio",
+        "duration": "2h 20m",
+        "description": "Keep a clear project history with commits, branches, and small reviewable changes.",
+        "isSample": true,
+        "lessons": [
+          {
+            "title": "Understand the core idea",
+            "body": "Git records snapshots of a project. Small commits make changes easier to understand and undo. Branches let you prepare a change while keeping the main line stable.\n\nThis course is sample educational content for exploring the platform."
+          },
+          {
+            "title": "Try a small practical exercise",
+            "body": "Create a practice repository, commit a README, and make a separate branch for a small improvement.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+          },
+          {
+            "title": "Reflect, improve, and share",
+            "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What is a useful way to begin this practice?",
+            "choices": [
+              "Choose one small, clear task",
+              "Try to finish everything at once",
+              "Skip the basic idea"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What makes reflection useful?",
+            "choices": [
+              "Only counting time spent",
+              "Naming a specific result and next improvement",
+              "Avoiding anything that was difficult"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What helps when sharing feedback?",
+            "choices": [
+              "Vague judgments",
+              "Personal assumptions",
+              "An observation, its effect, and a useful next step"
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      {
+        "id": "demo-typography",
+        "title": "Typography with Personality",
+        "category": "Design",
+        "level": "Beginner",
+        "icon": "design",
+        "color": "orange",
+        "teacher": "Studybuddy sample studio",
+        "duration": "1h 40m",
+        "description": "Use type size, rhythm, and spacing to make content clear and expressive.",
+        "isSample": true,
+        "lessons": [
+          {
+            "title": "Understand the core idea",
+            "body": "Typography creates hierarchy and rhythm. A restrained type scale, comfortable line length, and enough contrast make content easier to read. Font choice should support the message.\n\nThis course is sample educational content for exploring the platform."
+          },
+          {
+            "title": "Try a small practical exercise",
+            "body": "Arrange a title, introduction, and body paragraph using one font family and three deliberate sizes.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+          },
+          {
+            "title": "Reflect, improve, and share",
+            "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What is a useful way to begin this practice?",
+            "choices": [
+              "Choose one small, clear task",
+              "Try to finish everything at once",
+              "Skip the basic idea"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What makes reflection useful?",
+            "choices": [
+              "Only counting time spent",
+              "Naming a specific result and next improvement",
+              "Avoiding anything that was difficult"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What helps when sharing feedback?",
+            "choices": [
+              "Vague judgments",
+              "Personal assumptions",
+              "An observation, its effect, and a useful next step"
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      {
+        "id": "demo-research",
+        "title": "Ask Better User Questions",
+        "category": "Design",
+        "level": "Beginner",
+        "icon": "design",
+        "color": "green",
+        "teacher": "Studybuddy sample studio",
+        "duration": "2h 20m",
+        "description": "Learn to listen, observe, and turn useful questions into better product decisions.",
+        "isSample": true,
+        "lessons": [
+          {
+            "title": "Understand the core idea",
+            "body": "Useful research questions focus on behavior and context rather than asking people to predict what they might do. Open questions and concrete examples reveal more than leading questions.\n\nThis course is sample educational content for exploring the platform."
+          },
+          {
+            "title": "Try a small practical exercise",
+            "body": "Ask someone to describe the last time they learned a new skill. Note their steps without suggesting an answer.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+          },
+          {
+            "title": "Reflect, improve, and share",
+            "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What is a useful way to begin this practice?",
+            "choices": [
+              "Choose one small, clear task",
+              "Try to finish everything at once",
+              "Skip the basic idea"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What makes reflection useful?",
+            "choices": [
+              "Only counting time spent",
+              "Naming a specific result and next improvement",
+              "Avoiding anything that was difficult"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What helps when sharing feedback?",
+            "choices": [
+              "Vague judgments",
+              "Personal assumptions",
+              "An observation, its effect, and a useful next step"
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      {
+        "id": "demo-writing",
+        "title": "Write Clearer Digital Content",
+        "category": "Personal growth",
+        "level": "Beginner",
+        "icon": "growth",
+        "color": "purple",
+        "teacher": "Studybuddy sample studio",
+        "duration": "1h 40m",
+        "description": "Make your writing simpler, warmer, and easier to act on.",
+        "isSample": true,
+        "lessons": [
+          {
+            "title": "Understand the core idea",
+            "body": "Clear writing begins with a reader and a purpose. Put the useful point early, choose familiar words, and use specific actions. Read the text aloud to catch unnecessary complexity.\n\nThis course is sample educational content for exploring the platform."
+          },
+          {
+            "title": "Try a small practical exercise",
+            "body": "Rewrite a long instruction as a short explanation followed by one clear next step.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+          },
+          {
+            "title": "Reflect, improve, and share",
+            "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What is a useful way to begin this practice?",
+            "choices": [
+              "Choose one small, clear task",
+              "Try to finish everything at once",
+              "Skip the basic idea"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What makes reflection useful?",
+            "choices": [
+              "Only counting time spent",
+              "Naming a specific result and next improvement",
+              "Avoiding anything that was difficult"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What helps when sharing feedback?",
+            "choices": [
+              "Vague judgments",
+              "Personal assumptions",
+              "An observation, its effect, and a useful next step"
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      {
+        "id": "demo-focus",
+        "title": "Build a Sustainable Focus Habit",
+        "category": "Personal growth",
+        "level": "Beginner",
+        "icon": "growth",
+        "color": "green",
+        "teacher": "Studybuddy sample studio",
+        "duration": "2h 20m",
+        "description": "Plan focused sessions, manage distractions, and build a routine you can repeat.",
+        "isSample": true,
+        "lessons": [
+          {
+            "title": "Understand the core idea",
+            "body": "Focus is easier when the next action is specific. Reduce avoidable interruptions, choose a manageable session length, and leave time for rest. Consistency matters more than a perfect streak.\n\nThis course is sample educational content for exploring the platform."
+          },
+          {
+            "title": "Try a small practical exercise",
+            "body": "Choose one task for a short focus session. Write the next step before you start and one reflection afterward.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+          },
+          {
+            "title": "Reflect, improve, and share",
+            "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What is a useful way to begin this practice?",
+            "choices": [
+              "Choose one small, clear task",
+              "Try to finish everything at once",
+              "Skip the basic idea"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What makes reflection useful?",
+            "choices": [
+              "Only counting time spent",
+              "Naming a specific result and next improvement",
+              "Avoiding anything that was difficult"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What helps when sharing feedback?",
+            "choices": [
+              "Vague judgments",
+              "Personal assumptions",
+              "An observation, its effect, and a useful next step"
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      {
+        "id": "demo-charts",
+        "title": "Tell a Story with Data",
+        "category": "Development",
+        "level": "Beginner",
+        "icon": "code",
+        "color": "purple",
+        "teacher": "Studybuddy sample studio",
+        "duration": "1h 40m",
+        "description": "Choose useful charts, label them honestly, and explain what the evidence supports.",
+        "isSample": true,
+        "lessons": [
+          {
+            "title": "Understand the core idea",
+            "body": "Choose a chart to match the question. Bars compare categories; lines show change over time. Labels, units, sources, and uncertainty are part of the explanation, not decoration.\n\nThis course is sample educational content for exploring the platform."
+          },
+          {
+            "title": "Try a small practical exercise",
+            "body": "Compare a small set of weekly study minutes with a labeled bar chart. Write one supported conclusion.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+          },
+          {
+            "title": "Reflect, improve, and share",
+            "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What is a useful way to begin this practice?",
+            "choices": [
+              "Choose one small, clear task",
+              "Try to finish everything at once",
+              "Skip the basic idea"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What makes reflection useful?",
+            "choices": [
+              "Only counting time spent",
+              "Naming a specific result and next improvement",
+              "Avoiding anything that was difficult"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What helps when sharing feedback?",
+            "choices": [
+              "Vague judgments",
+              "Personal assumptions",
+              "An observation, its effect, and a useful next step"
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      {
+        "id": "demo-planning",
+        "title": "From Idea to Small Project",
+        "category": "Personal growth",
+        "level": "Beginner",
+        "icon": "growth",
+        "color": "orange",
+        "teacher": "Studybuddy sample studio",
+        "duration": "2h 20m",
+        "description": "Turn an ambitious idea into a useful first version with achievable milestones.",
+        "isSample": true,
+        "lessons": [
+          {
+            "title": "Understand the core idea",
+            "body": "A small project begins with a clear outcome and a narrow first version. Separate essential needs from later improvements, identify dependencies, and review progress against observable results.\n\nThis course is sample educational content for exploring the platform."
+          },
+          {
+            "title": "Try a small practical exercise",
+            "body": "Describe a project in one sentence. Choose three milestones and define how you will know each one is complete.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+          },
+          {
+            "title": "Reflect, improve, and share",
+            "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What is a useful way to begin this practice?",
+            "choices": [
+              "Choose one small, clear task",
+              "Try to finish everything at once",
+              "Skip the basic idea"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What makes reflection useful?",
+            "choices": [
+              "Only counting time spent",
+              "Naming a specific result and next improvement",
+              "Avoiding anything that was difficult"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What helps when sharing feedback?",
+            "choices": [
+              "Vague judgments",
+              "Personal assumptions",
+              "An observation, its effect, and a useful next step"
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      {
+        "id": "demo-feedback",
+        "title": "Give Feedback That Helps",
+        "category": "Personal growth",
+        "level": "Beginner",
+        "icon": "growth",
+        "color": "pink",
+        "teacher": "Studybuddy sample studio",
+        "duration": "1h 40m",
+        "description": "Practice useful, specific feedback that supports another person’s next step.",
+        "isSample": true,
+        "lessons": [
+          {
+            "title": "Understand the core idea",
+            "body": "Helpful feedback describes an observable choice, explains its effect, and offers a possible next step. Ask about intent before assuming a mistake, and leave room for a different solution.\n\nThis course is sample educational content for exploring the platform."
+          },
+          {
+            "title": "Try a small practical exercise",
+            "body": "Review a sample interface. Name one effective choice and one focused improvement, each with a reason.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+          },
+          {
+            "title": "Reflect, improve, and share",
+            "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What is a useful way to begin this practice?",
+            "choices": [
+              "Choose one small, clear task",
+              "Try to finish everything at once",
+              "Skip the basic idea"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What makes reflection useful?",
+            "choices": [
+              "Only counting time spent",
+              "Naming a specific result and next improvement",
+              "Avoiding anything that was difficult"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What helps when sharing feedback?",
+            "choices": [
+              "Vague judgments",
+              "Personal assumptions",
+              "An observation, its effect, and a useful next step"
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      {
+        "id": "demo-systems",
+        "title": "Design a Tiny Design System",
+        "category": "Design",
+        "level": "Beginner",
+        "icon": "design",
+        "color": "pink",
+        "teacher": "Studybuddy sample studio",
+        "duration": "2h 20m",
+        "description": "Create a small set of reusable colors, spacing, and interface components.",
+        "isSample": true,
+        "lessons": [
+          {
+            "title": "Understand the core idea",
+            "body": "A design system is a set of shared decisions. Tokens capture values such as color and spacing; components apply them consistently. Document when a pattern should be used as well as how it looks.\n\nThis course is sample educational content for exploring the platform."
+          },
+          {
+            "title": "Try a small practical exercise",
+            "body": "Define a spacing scale, two button states, and a form input. Check consistency across a small screen.\n\nKeep your first attempt small. Explain the choices you made and note one thing you want to improve."
+          },
+          {
+            "title": "Reflect, improve, and share",
+            "body": "Review your work against the main idea from the first lesson. Check the result, identify one specific improvement, and try it.\n\nShare a short reflection with a study buddy: what you tried, what happened, and what you would change next."
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What is a useful way to begin this practice?",
+            "choices": [
+              "Choose one small, clear task",
+              "Try to finish everything at once",
+              "Skip the basic idea"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What makes reflection useful?",
+            "choices": [
+              "Only counting time spent",
+              "Naming a specific result and next improvement",
+              "Avoiding anything that was difficult"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What helps when sharing feedback?",
+            "choices": [
+              "Vague judgments",
+              "Personal assumptions",
+              "An observation, its effect, and a useful next step"
+            ],
+            "answer": 2
+          }
+        ]
+      }
+    ],
+    "assignments": [
+      {
+        "id": "demo-challenge-001",
+        "title": "Try it: UI Design Fundamentals",
+        "description": "Sample challenge: complete a small exercise inspired by UI Design Fundamentals. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Design",
+        "marks": 100,
+        "courseId": "design",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-002",
+        "title": "Try it: Build Your First Website",
+        "description": "Sample challenge: complete a small exercise inspired by Build Your First Website. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Development",
+        "marks": 100,
+        "courseId": "web",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-003",
+        "title": "Try it: Learn Smarter, Not Harder",
+        "description": "Sample challenge: complete a small exercise inspired by Learn Smarter, Not Harder. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Personal growth",
+        "marks": 100,
+        "courseId": "productivity",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-004",
+        "title": "Try it: JavaScript, Step by Step",
+        "description": "Sample challenge: complete a small exercise inspired by JavaScript, Step by Step. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Development",
+        "marks": 100,
+        "courseId": "javascript",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-005",
+        "title": "Try it: Speak with Confidence",
+        "description": "Sample challenge: complete a small exercise inspired by Speak with Confidence. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Personal growth",
+        "marks": 100,
+        "courseId": "communication",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-006",
+        "title": "Try it: Make Sense of Everyday Data",
+        "description": "Sample challenge: complete a small exercise inspired by Make Sense of Everyday Data. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Development",
+        "marks": 100,
+        "courseId": "data",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-007",
+        "title": "Try it: Designing for Everyone",
+        "description": "Sample challenge: complete a small exercise inspired by Designing for Everyone. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Design",
+        "marks": 100,
+        "courseId": "demo-accessibility",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-008",
+        "title": "Try it: CSS Layouts That Work",
+        "description": "Sample challenge: complete a small exercise inspired by CSS Layouts That Work. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Development",
+        "marks": 100,
+        "courseId": "demo-layouts",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-009",
+        "title": "Try it: Your First React Components",
+        "description": "Sample challenge: complete a small exercise inspired by Your First React Components. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Development",
+        "marks": 100,
+        "courseId": "demo-react",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-010",
+        "title": "Try it: Git for Everyday Projects",
+        "description": "Sample challenge: complete a small exercise inspired by Git for Everyday Projects. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Development",
+        "marks": 100,
+        "courseId": "demo-git",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-011",
+        "title": "Try it: Typography with Personality",
+        "description": "Sample challenge: complete a small exercise inspired by Typography with Personality. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Design",
+        "marks": 100,
+        "courseId": "demo-typography",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-012",
+        "title": "Try it: Ask Better User Questions",
+        "description": "Sample challenge: complete a small exercise inspired by Ask Better User Questions. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Design",
+        "marks": 100,
+        "courseId": "demo-research",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-013",
+        "title": "Try it: Write Clearer Digital Content",
+        "description": "Sample challenge: complete a small exercise inspired by Write Clearer Digital Content. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Personal growth",
+        "marks": 100,
+        "courseId": "demo-writing",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-014",
+        "title": "Try it: Build a Sustainable Focus Habit",
+        "description": "Sample challenge: complete a small exercise inspired by Build a Sustainable Focus Habit. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Personal growth",
+        "marks": 100,
+        "courseId": "demo-focus",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-015",
+        "title": "Try it: Tell a Story with Data",
+        "description": "Sample challenge: complete a small exercise inspired by Tell a Story with Data. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Development",
+        "marks": 100,
+        "courseId": "demo-charts",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-016",
+        "title": "Try it: From Idea to Small Project",
+        "description": "Sample challenge: complete a small exercise inspired by From Idea to Small Project. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Personal growth",
+        "marks": 100,
+        "courseId": "demo-planning",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-017",
+        "title": "Try it: Give Feedback That Helps",
+        "description": "Sample challenge: complete a small exercise inspired by Give Feedback That Helps. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Personal growth",
+        "marks": 100,
+        "courseId": "demo-feedback",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-018",
+        "title": "Try it: Design a Tiny Design System",
+        "description": "Sample challenge: complete a small exercise inspired by Design a Tiny Design System. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Design",
+        "marks": 100,
+        "courseId": "demo-systems",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-019",
+        "title": "Practice project: UI Design Fundamentals",
+        "description": "Sample challenge: complete a small exercise inspired by UI Design Fundamentals. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Design",
+        "marks": 100,
+        "courseId": "design",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-020",
+        "title": "Practice project: Build Your First Website",
+        "description": "Sample challenge: complete a small exercise inspired by Build Your First Website. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Development",
+        "marks": 100,
+        "courseId": "web",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-021",
+        "title": "Practice project: Learn Smarter, Not Harder",
+        "description": "Sample challenge: complete a small exercise inspired by Learn Smarter, Not Harder. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Personal growth",
+        "marks": 100,
+        "courseId": "productivity",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-022",
+        "title": "Practice project: JavaScript, Step by Step",
+        "description": "Sample challenge: complete a small exercise inspired by JavaScript, Step by Step. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Development",
+        "marks": 100,
+        "courseId": "javascript",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-023",
+        "title": "Practice project: Speak with Confidence",
+        "description": "Sample challenge: complete a small exercise inspired by Speak with Confidence. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Personal growth",
+        "marks": 100,
+        "courseId": "communication",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-024",
+        "title": "Practice project: Make Sense of Everyday Data",
+        "description": "Sample challenge: complete a small exercise inspired by Make Sense of Everyday Data. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Development",
+        "marks": 100,
+        "courseId": "data",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-025",
+        "title": "Practice project: Designing for Everyone",
+        "description": "Sample challenge: complete a small exercise inspired by Designing for Everyone. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Design",
+        "marks": 100,
+        "courseId": "demo-accessibility",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-026",
+        "title": "Practice project: CSS Layouts That Work",
+        "description": "Sample challenge: complete a small exercise inspired by CSS Layouts That Work. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Development",
+        "marks": 100,
+        "courseId": "demo-layouts",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-027",
+        "title": "Practice project: Your First React Components",
+        "description": "Sample challenge: complete a small exercise inspired by Your First React Components. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Development",
+        "marks": 100,
+        "courseId": "demo-react",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-028",
+        "title": "Practice project: Git for Everyday Projects",
+        "description": "Sample challenge: complete a small exercise inspired by Git for Everyday Projects. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Development",
+        "marks": 100,
+        "courseId": "demo-git",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-029",
+        "title": "Practice project: Typography with Personality",
+        "description": "Sample challenge: complete a small exercise inspired by Typography with Personality. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Design",
+        "marks": 100,
+        "courseId": "demo-typography",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-030",
+        "title": "Practice project: Ask Better User Questions",
+        "description": "Sample challenge: complete a small exercise inspired by Ask Better User Questions. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Design",
+        "marks": 100,
+        "courseId": "demo-research",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-031",
+        "title": "Practice project: Write Clearer Digital Content",
+        "description": "Sample challenge: complete a small exercise inspired by Write Clearer Digital Content. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Personal growth",
+        "marks": 100,
+        "courseId": "demo-writing",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-032",
+        "title": "Practice project: Build a Sustainable Focus Habit",
+        "description": "Sample challenge: complete a small exercise inspired by Build a Sustainable Focus Habit. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Personal growth",
+        "marks": 100,
+        "courseId": "demo-focus",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-033",
+        "title": "Practice project: Tell a Story with Data",
+        "description": "Sample challenge: complete a small exercise inspired by Tell a Story with Data. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Development",
+        "marks": 100,
+        "courseId": "demo-charts",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-034",
+        "title": "Practice project: From Idea to Small Project",
+        "description": "Sample challenge: complete a small exercise inspired by From Idea to Small Project. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Personal growth",
+        "marks": 100,
+        "courseId": "demo-planning",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-035",
+        "title": "Practice project: Give Feedback That Helps",
+        "description": "Sample challenge: complete a small exercise inspired by Give Feedback That Helps. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Personal growth",
+        "marks": 100,
+        "courseId": "demo-feedback",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-challenge-036",
+        "title": "Practice project: Design a Tiny Design System",
+        "description": "Sample challenge: complete a small exercise inspired by Design a Tiny Design System. Explain your process, share a project link or reflection, and identify one next step. This is self-guided sample practice without grading.",
+        "category": "Design",
+        "marks": 100,
+        "courseId": "demo-systems",
+        "ownerId": "sample-studio",
+        "ownerName": "Studybuddy · sample content",
+        "due": "",
+        "submissions": [],
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      }
+    ],
+    "messages": [
+      {
+        "id": "demo-message-001",
+        "userId": "sample-studio",
+        "name": "Amina Rahman (demo)",
+        "room": "general",
+        "text": "Sample discussion: What is one small thing you learned today?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-002",
+        "userId": "sample-studio",
+        "name": "Rafi Ahmed (demo)",
+        "room": "design",
+        "text": "Sample discussion: Share a project idea you can finish in one afternoon.",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-003",
+        "userId": "sample-studio",
+        "name": "Nadia Hasan (demo)",
+        "room": "development",
+        "text": "Sample discussion: What helped you get unstuck this week?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-004",
+        "userId": "sample-studio",
+        "name": "Arif Karim (demo)",
+        "room": "general",
+        "text": "Sample discussion: Which lesson would you like to practice with a buddy?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-005",
+        "userId": "sample-studio",
+        "name": "Maya Chowdhury (demo)",
+        "room": "design",
+        "text": "Sample discussion: Share one useful resource and explain why you chose it.",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-006",
+        "userId": "sample-studio",
+        "name": "Sami Khan (demo)",
+        "room": "development",
+        "text": "Sample discussion: What makes a learning routine sustainable for you?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-007",
+        "userId": "sample-studio",
+        "name": "Lina Akter (demo)",
+        "room": "general",
+        "text": "Sample discussion: What is one small thing you learned today?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-008",
+        "userId": "sample-studio",
+        "name": "Tariq Islam (demo)",
+        "room": "design",
+        "text": "Sample discussion: Share a project idea you can finish in one afternoon.",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-009",
+        "userId": "sample-studio",
+        "name": "Nila Sen (demo)",
+        "room": "development",
+        "text": "Sample discussion: What helped you get unstuck this week?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-010",
+        "userId": "sample-studio",
+        "name": "Imran Ali (demo)",
+        "room": "general",
+        "text": "Sample discussion: Which lesson would you like to practice with a buddy?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-011",
+        "userId": "sample-studio",
+        "name": "Sara Noor (demo)",
+        "room": "design",
+        "text": "Sample discussion: Share one useful resource and explain why you chose it.",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-012",
+        "userId": "sample-studio",
+        "name": "Fahim Das (demo)",
+        "room": "development",
+        "text": "Sample discussion: What makes a learning routine sustainable for you?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-013",
+        "userId": "sample-studio",
+        "name": "Amina Rahman (demo)",
+        "room": "general",
+        "text": "Sample discussion: What is one small thing you learned today?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-014",
+        "userId": "sample-studio",
+        "name": "Rafi Ahmed (demo)",
+        "room": "design",
+        "text": "Sample discussion: Share a project idea you can finish in one afternoon.",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-015",
+        "userId": "sample-studio",
+        "name": "Nadia Hasan (demo)",
+        "room": "development",
+        "text": "Sample discussion: What helped you get unstuck this week?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-016",
+        "userId": "sample-studio",
+        "name": "Arif Karim (demo)",
+        "room": "general",
+        "text": "Sample discussion: Which lesson would you like to practice with a buddy?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-017",
+        "userId": "sample-studio",
+        "name": "Maya Chowdhury (demo)",
+        "room": "design",
+        "text": "Sample discussion: Share one useful resource and explain why you chose it.",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-018",
+        "userId": "sample-studio",
+        "name": "Sami Khan (demo)",
+        "room": "development",
+        "text": "Sample discussion: What makes a learning routine sustainable for you?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-019",
+        "userId": "sample-studio",
+        "name": "Lina Akter (demo)",
+        "room": "general",
+        "text": "Sample discussion: What is one small thing you learned today?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-020",
+        "userId": "sample-studio",
+        "name": "Tariq Islam (demo)",
+        "room": "design",
+        "text": "Sample discussion: Share a project idea you can finish in one afternoon.",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-021",
+        "userId": "sample-studio",
+        "name": "Nila Sen (demo)",
+        "room": "development",
+        "text": "Sample discussion: What helped you get unstuck this week?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-022",
+        "userId": "sample-studio",
+        "name": "Imran Ali (demo)",
+        "room": "general",
+        "text": "Sample discussion: Which lesson would you like to practice with a buddy?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-023",
+        "userId": "sample-studio",
+        "name": "Sara Noor (demo)",
+        "room": "design",
+        "text": "Sample discussion: Share one useful resource and explain why you chose it.",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-024",
+        "userId": "sample-studio",
+        "name": "Fahim Das (demo)",
+        "room": "development",
+        "text": "Sample discussion: What makes a learning routine sustainable for you?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-025",
+        "userId": "sample-studio",
+        "name": "Amina Rahman (demo)",
+        "room": "general",
+        "text": "Sample discussion: What is one small thing you learned today?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-026",
+        "userId": "sample-studio",
+        "name": "Rafi Ahmed (demo)",
+        "room": "design",
+        "text": "Sample discussion: Share a project idea you can finish in one afternoon.",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-027",
+        "userId": "sample-studio",
+        "name": "Nadia Hasan (demo)",
+        "room": "development",
+        "text": "Sample discussion: What helped you get unstuck this week?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-028",
+        "userId": "sample-studio",
+        "name": "Arif Karim (demo)",
+        "room": "general",
+        "text": "Sample discussion: Which lesson would you like to practice with a buddy?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-029",
+        "userId": "sample-studio",
+        "name": "Maya Chowdhury (demo)",
+        "room": "design",
+        "text": "Sample discussion: Share one useful resource and explain why you chose it.",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-message-030",
+        "userId": "sample-studio",
+        "name": "Sami Khan (demo)",
+        "room": "development",
+        "text": "Sample discussion: What makes a learning routine sustainable for you?",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "isSample": true,
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      }
+    ],
+    "crm_contacts": [
+      {
+        "id": "demo-contact-0",
+        "name": "Amina Rahman (demo)",
+        "email": "contact1@example.com",
+        "phone": "",
+        "company": "Sample Studio",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-1",
+        "name": "Rafi Ahmed (demo)",
+        "email": "contact2@example.com",
+        "phone": "",
+        "company": "Example Learning",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-2",
+        "name": "Nadia Hasan (demo)",
+        "email": "contact3@example.com",
+        "phone": "",
+        "company": "Demo Workshop",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-3",
+        "name": "Arif Karim (demo)",
+        "email": "contact4@example.com",
+        "phone": "",
+        "company": "Practice Lab",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-4",
+        "name": "Maya Chowdhury (demo)",
+        "email": "contact5@example.com",
+        "phone": "",
+        "company": "Sample Studio",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-5",
+        "name": "Sami Khan (demo)",
+        "email": "contact6@example.com",
+        "phone": "",
+        "company": "Example Learning",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-6",
+        "name": "Lina Akter (demo)",
+        "email": "contact7@example.com",
+        "phone": "",
+        "company": "Demo Workshop",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-7",
+        "name": "Tariq Islam (demo)",
+        "email": "contact8@example.com",
+        "phone": "",
+        "company": "Practice Lab",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-8",
+        "name": "Nila Sen (demo)",
+        "email": "contact9@example.com",
+        "phone": "",
+        "company": "Sample Studio",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-9",
+        "name": "Imran Ali (demo)",
+        "email": "contact10@example.com",
+        "phone": "",
+        "company": "Example Learning",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-10",
+        "name": "Sara Noor (demo)",
+        "email": "contact11@example.com",
+        "phone": "",
+        "company": "Demo Workshop",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-11",
+        "name": "Fahim Das (demo)",
+        "email": "contact12@example.com",
+        "phone": "",
+        "company": "Practice Lab",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-12",
+        "name": "Amina Rahman (demo)",
+        "email": "contact13@example.com",
+        "phone": "",
+        "company": "Sample Studio",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-13",
+        "name": "Rafi Ahmed (demo)",
+        "email": "contact14@example.com",
+        "phone": "",
+        "company": "Example Learning",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-14",
+        "name": "Nadia Hasan (demo)",
+        "email": "contact15@example.com",
+        "phone": "",
+        "company": "Demo Workshop",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-15",
+        "name": "Arif Karim (demo)",
+        "email": "contact16@example.com",
+        "phone": "",
+        "company": "Practice Lab",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-16",
+        "name": "Maya Chowdhury (demo)",
+        "email": "contact17@example.com",
+        "phone": "",
+        "company": "Sample Studio",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-17",
+        "name": "Sami Khan (demo)",
+        "email": "contact18@example.com",
+        "phone": "",
+        "company": "Example Learning",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-18",
+        "name": "Lina Akter (demo)",
+        "email": "contact19@example.com",
+        "phone": "",
+        "company": "Demo Workshop",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-contact-19",
+        "name": "Tariq Islam (demo)",
+        "email": "contact20@example.com",
+        "phone": "",
+        "company": "Practice Lab",
+        "notes": "Fictional contact for interface demonstration. Not a real customer.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      }
+    ],
+    "crm_leads": [
+      {
+        "id": "demo-lead-0",
+        "name": "Sample learning partnership 1",
+        "email": "lead1@example.com",
+        "source": "Course enquiry",
+        "status": "New",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-lead-1",
+        "name": "Sample learning partnership 2",
+        "email": "lead2@example.com",
+        "source": "Community event",
+        "status": "Contacted",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-lead-2",
+        "name": "Sample learning partnership 3",
+        "email": "lead3@example.com",
+        "source": "Website form",
+        "status": "Qualified",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-lead-3",
+        "name": "Sample learning partnership 4",
+        "email": "lead4@example.com",
+        "source": "Course enquiry",
+        "status": "Won",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-lead-4",
+        "name": "Sample learning partnership 5",
+        "email": "lead5@example.com",
+        "source": "Community event",
+        "status": "Lost",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-lead-5",
+        "name": "Sample learning partnership 6",
+        "email": "lead6@example.com",
+        "source": "Website form",
+        "status": "New",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-lead-6",
+        "name": "Sample learning partnership 7",
+        "email": "lead7@example.com",
+        "source": "Course enquiry",
+        "status": "Contacted",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-lead-7",
+        "name": "Sample learning partnership 8",
+        "email": "lead8@example.com",
+        "source": "Community event",
+        "status": "Qualified",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-lead-8",
+        "name": "Sample learning partnership 9",
+        "email": "lead9@example.com",
+        "source": "Website form",
+        "status": "Won",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-lead-9",
+        "name": "Sample learning partnership 10",
+        "email": "lead10@example.com",
+        "source": "Course enquiry",
+        "status": "Lost",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-lead-10",
+        "name": "Sample learning partnership 11",
+        "email": "lead11@example.com",
+        "source": "Community event",
+        "status": "New",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-lead-11",
+        "name": "Sample learning partnership 12",
+        "email": "lead12@example.com",
+        "source": "Website form",
+        "status": "Contacted",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-lead-12",
+        "name": "Sample learning partnership 13",
+        "email": "lead13@example.com",
+        "source": "Course enquiry",
+        "status": "Qualified",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-lead-13",
+        "name": "Sample learning partnership 14",
+        "email": "lead14@example.com",
+        "source": "Community event",
+        "status": "Won",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-lead-14",
+        "name": "Sample learning partnership 15",
+        "email": "lead15@example.com",
+        "source": "Website form",
+        "status": "Lost",
+        "notes": "Fictional CRM lead. No real sale or agreement.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      }
+    ],
+    "work_tasks": [
+      {
+        "id": "demo-task-0",
+        "title": "Review course outline · sample 1",
+        "assignee": "Amina Rahman (demo)",
+        "due": "2026-12-01",
+        "status": "To do",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-task-1",
+        "title": "Prepare practice workshop · sample 2",
+        "assignee": "Rafi Ahmed (demo)",
+        "due": "2026-12-02",
+        "status": "In progress",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-task-2",
+        "title": "Update resource guide · sample 3",
+        "assignee": "Nadia Hasan (demo)",
+        "due": "2026-12-03",
+        "status": "Done",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-task-3",
+        "title": "Review accessibility checklist · sample 4",
+        "assignee": "Arif Karim (demo)",
+        "due": "2026-12-04",
+        "status": "To do",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-task-4",
+        "title": "Plan community session · sample 5",
+        "assignee": "Maya Chowdhury (demo)",
+        "due": "2026-12-05",
+        "status": "In progress",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-task-5",
+        "title": "Review course outline · sample 6",
+        "assignee": "Sami Khan (demo)",
+        "due": "2026-12-06",
+        "status": "Done",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-task-6",
+        "title": "Prepare practice workshop · sample 7",
+        "assignee": "Lina Akter (demo)",
+        "due": "2026-12-07",
+        "status": "To do",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-task-7",
+        "title": "Update resource guide · sample 8",
+        "assignee": "Tariq Islam (demo)",
+        "due": "2026-12-08",
+        "status": "In progress",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-task-8",
+        "title": "Review accessibility checklist · sample 9",
+        "assignee": "Nila Sen (demo)",
+        "due": "2026-12-09",
+        "status": "Done",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-task-9",
+        "title": "Plan community session · sample 10",
+        "assignee": "Imran Ali (demo)",
+        "due": "2026-12-10",
+        "status": "To do",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-task-10",
+        "title": "Review course outline · sample 11",
+        "assignee": "Sara Noor (demo)",
+        "due": "2026-12-11",
+        "status": "In progress",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-task-11",
+        "title": "Prepare practice workshop · sample 12",
+        "assignee": "Fahim Das (demo)",
+        "due": "2026-12-12",
+        "status": "Done",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-task-12",
+        "title": "Update resource guide · sample 13",
+        "assignee": "Amina Rahman (demo)",
+        "due": "2026-12-13",
+        "status": "To do",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-task-13",
+        "title": "Review accessibility checklist · sample 14",
+        "assignee": "Rafi Ahmed (demo)",
+        "due": "2026-12-14",
+        "status": "In progress",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-task-14",
+        "title": "Plan community session · sample 15",
+        "assignee": "Nadia Hasan (demo)",
+        "due": "2026-12-15",
+        "status": "Done",
+        "notes": "Sample operational task for demonstrating workflow.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      }
+    ],
+    "inventory_items": [
+      {
+        "id": "demo-item-0",
+        "name": "Workshop notebook · demo 1",
+        "sku": "DEMO-0001",
+        "quantity": 8,
+        "unit": "pieces",
+        "reorderAt": 10,
+        "notes": "Fictional stock. Not a real inventory balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-item-1",
+        "name": "Practice kit · demo 2",
+        "sku": "DEMO-0002",
+        "quantity": 11,
+        "unit": "pieces",
+        "reorderAt": 10,
+        "notes": "Fictional stock. Not a real inventory balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-item-2",
+        "name": "Reference book · demo 3",
+        "sku": "DEMO-0003",
+        "quantity": 14,
+        "unit": "pieces",
+        "reorderAt": 10,
+        "notes": "Fictional stock. Not a real inventory balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-item-3",
+        "name": "Drawing tablet · demo 4",
+        "sku": "DEMO-0004",
+        "quantity": 17,
+        "unit": "pieces",
+        "reorderAt": 10,
+        "notes": "Fictional stock. Not a real inventory balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-item-4",
+        "name": "Workshop notebook · demo 5",
+        "sku": "DEMO-0005",
+        "quantity": 20,
+        "unit": "pieces",
+        "reorderAt": 10,
+        "notes": "Fictional stock. Not a real inventory balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-item-5",
+        "name": "Practice kit · demo 6",
+        "sku": "DEMO-0006",
+        "quantity": 23,
+        "unit": "pieces",
+        "reorderAt": 10,
+        "notes": "Fictional stock. Not a real inventory balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-item-6",
+        "name": "Reference book · demo 7",
+        "sku": "DEMO-0007",
+        "quantity": 26,
+        "unit": "pieces",
+        "reorderAt": 10,
+        "notes": "Fictional stock. Not a real inventory balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-item-7",
+        "name": "Drawing tablet · demo 8",
+        "sku": "DEMO-0008",
+        "quantity": 29,
+        "unit": "pieces",
+        "reorderAt": 10,
+        "notes": "Fictional stock. Not a real inventory balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-item-8",
+        "name": "Workshop notebook · demo 9",
+        "sku": "DEMO-0009",
+        "quantity": 32,
+        "unit": "pieces",
+        "reorderAt": 10,
+        "notes": "Fictional stock. Not a real inventory balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-item-9",
+        "name": "Practice kit · demo 10",
+        "sku": "DEMO-0010",
+        "quantity": 35,
+        "unit": "pieces",
+        "reorderAt": 10,
+        "notes": "Fictional stock. Not a real inventory balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-item-10",
+        "name": "Reference book · demo 11",
+        "sku": "DEMO-0011",
+        "quantity": 38,
+        "unit": "pieces",
+        "reorderAt": 10,
+        "notes": "Fictional stock. Not a real inventory balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-item-11",
+        "name": "Drawing tablet · demo 12",
+        "sku": "DEMO-0012",
+        "quantity": 41,
+        "unit": "pieces",
+        "reorderAt": 10,
+        "notes": "Fictional stock. Not a real inventory balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      }
+    ],
+    "hr_employees": [
+      {
+        "id": "demo-employee-0",
+        "name": "Amina Rahman (demo)",
+        "email": "team1@example.com",
+        "department": "Learning",
+        "position": "Sample coordinator",
+        "startedAt": "2026-10-01",
+        "status": "Active",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-employee-1",
+        "name": "Rafi Ahmed (demo)",
+        "email": "team2@example.com",
+        "department": "Content",
+        "position": "Sample editor",
+        "startedAt": "2026-10-01",
+        "status": "On leave",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-employee-2",
+        "name": "Nadia Hasan (demo)",
+        "email": "team3@example.com",
+        "department": "Operations",
+        "position": "Sample facilitator",
+        "startedAt": "2026-10-01",
+        "status": "Inactive",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-employee-3",
+        "name": "Arif Karim (demo)",
+        "email": "team4@example.com",
+        "department": "Learning",
+        "position": "Sample coordinator",
+        "startedAt": "2026-10-01",
+        "status": "Active",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-employee-4",
+        "name": "Maya Chowdhury (demo)",
+        "email": "team5@example.com",
+        "department": "Content",
+        "position": "Sample editor",
+        "startedAt": "2026-10-01",
+        "status": "On leave",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-employee-5",
+        "name": "Sami Khan (demo)",
+        "email": "team6@example.com",
+        "department": "Operations",
+        "position": "Sample facilitator",
+        "startedAt": "2026-10-01",
+        "status": "Inactive",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-employee-6",
+        "name": "Lina Akter (demo)",
+        "email": "team7@example.com",
+        "department": "Learning",
+        "position": "Sample coordinator",
+        "startedAt": "2026-10-01",
+        "status": "Active",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-employee-7",
+        "name": "Tariq Islam (demo)",
+        "email": "team8@example.com",
+        "department": "Content",
+        "position": "Sample editor",
+        "startedAt": "2026-10-01",
+        "status": "On leave",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-employee-8",
+        "name": "Nila Sen (demo)",
+        "email": "team9@example.com",
+        "department": "Operations",
+        "position": "Sample facilitator",
+        "startedAt": "2026-10-01",
+        "status": "Inactive",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-employee-9",
+        "name": "Imran Ali (demo)",
+        "email": "team10@example.com",
+        "department": "Learning",
+        "position": "Sample coordinator",
+        "startedAt": "2026-10-01",
+        "status": "Active",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      }
+    ],
+    "finance_invoices": [
+      {
+        "id": "demo-invoice-0",
+        "number": "DEMO-2026-001",
+        "customer": "Example organization 1",
+        "amountMinor": 150000,
+        "currency": "BDT",
+        "due": "2026-12-01",
+        "status": "Draft",
+        "notes": "DEMO ONLY. Fictional invoice for interface testing. No real payment or financial balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-invoice-1",
+        "number": "DEMO-2026-002",
+        "customer": "Example organization 2",
+        "amountMinor": 175000,
+        "currency": "BDT",
+        "due": "2026-12-02",
+        "status": "Sent",
+        "notes": "DEMO ONLY. Fictional invoice for interface testing. No real payment or financial balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-invoice-2",
+        "number": "DEMO-2026-003",
+        "customer": "Example organization 3",
+        "amountMinor": 200000,
+        "currency": "BDT",
+        "due": "2026-12-03",
+        "status": "Paid",
+        "notes": "DEMO ONLY. Fictional invoice for interface testing. No real payment or financial balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-invoice-3",
+        "number": "DEMO-2026-004",
+        "customer": "Example organization 4",
+        "amountMinor": 225000,
+        "currency": "BDT",
+        "due": "2026-12-04",
+        "status": "Void",
+        "notes": "DEMO ONLY. Fictional invoice for interface testing. No real payment or financial balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-invoice-4",
+        "number": "DEMO-2026-005",
+        "customer": "Example organization 5",
+        "amountMinor": 250000,
+        "currency": "BDT",
+        "due": "2026-12-05",
+        "status": "Draft",
+        "notes": "DEMO ONLY. Fictional invoice for interface testing. No real payment or financial balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-invoice-5",
+        "number": "DEMO-2026-006",
+        "customer": "Example organization 6",
+        "amountMinor": 275000,
+        "currency": "BDT",
+        "due": "2026-12-06",
+        "status": "Sent",
+        "notes": "DEMO ONLY. Fictional invoice for interface testing. No real payment or financial balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-invoice-6",
+        "number": "DEMO-2026-007",
+        "customer": "Example organization 7",
+        "amountMinor": 300000,
+        "currency": "BDT",
+        "due": "2026-12-07",
+        "status": "Paid",
+        "notes": "DEMO ONLY. Fictional invoice for interface testing. No real payment or financial balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-invoice-7",
+        "number": "DEMO-2026-008",
+        "customer": "Example organization 8",
+        "amountMinor": 325000,
+        "currency": "BDT",
+        "due": "2026-12-08",
+        "status": "Void",
+        "notes": "DEMO ONLY. Fictional invoice for interface testing. No real payment or financial balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-invoice-8",
+        "number": "DEMO-2026-009",
+        "customer": "Example organization 9",
+        "amountMinor": 350000,
+        "currency": "BDT",
+        "due": "2026-12-09",
+        "status": "Draft",
+        "notes": "DEMO ONLY. Fictional invoice for interface testing. No real payment or financial balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-invoice-9",
+        "number": "DEMO-2026-010",
+        "customer": "Example organization 10",
+        "amountMinor": 375000,
+        "currency": "BDT",
+        "due": "2026-12-10",
+        "status": "Sent",
+        "notes": "DEMO ONLY. Fictional invoice for interface testing. No real payment or financial balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-invoice-10",
+        "number": "DEMO-2026-011",
+        "customer": "Example organization 11",
+        "amountMinor": 400000,
+        "currency": "BDT",
+        "due": "2026-12-11",
+        "status": "Paid",
+        "notes": "DEMO ONLY. Fictional invoice for interface testing. No real payment or financial balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-invoice-11",
+        "number": "DEMO-2026-012",
+        "customer": "Example organization 12",
+        "amountMinor": 425000,
+        "currency": "BDT",
+        "due": "2026-12-12",
+        "status": "Void",
+        "notes": "DEMO ONLY. Fictional invoice for interface testing. No real payment or financial balance.",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      }
+    ],
+    "cms_pages": [
+      {
+        "id": "demo-page-0",
+        "title": "Getting started with Studybuddy",
+        "slug": "sample-resource-1",
+        "body": "Sample resource\n\nChoose one useful idea, put it into practice, and reflect on what happened. Start with a small task that fits the time you have. Ask a buddy for specific feedback.\n\nThis page is demonstration content and can be edited or removed by the administrator.",
+        "description": "A sample learning resource from the Studybuddy demonstration collection.",
+        "status": "Published",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-page-1",
+        "title": "How to choose your next course",
+        "slug": "sample-resource-2",
+        "body": "Sample resource\n\nChoose one useful idea, put it into practice, and reflect on what happened. Start with a small task that fits the time you have. Ask a buddy for specific feedback.\n\nThis page is demonstration content and can be edited or removed by the administrator.",
+        "description": "A sample learning resource from the Studybuddy demonstration collection.",
+        "status": "Published",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-page-2",
+        "title": "A simple weekly learning routine",
+        "slug": "sample-resource-3",
+        "body": "Sample resource\n\nChoose one useful idea, put it into practice, and reflect on what happened. Start with a small task that fits the time you have. Ask a buddy for specific feedback.\n\nThis page is demonstration content and can be edited or removed by the administrator.",
+        "description": "A sample learning resource from the Studybuddy demonstration collection.",
+        "status": "Published",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-page-3",
+        "title": "Thoughtful community feedback",
+        "slug": "sample-resource-4",
+        "body": "Sample resource\n\nChoose one useful idea, put it into practice, and reflect on what happened. Start with a small task that fits the time you have. Ask a buddy for specific feedback.\n\nThis page is demonstration content and can be edited or removed by the administrator.",
+        "description": "A sample learning resource from the Studybuddy demonstration collection.",
+        "status": "Draft",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-page-4",
+        "title": "Making time for practice",
+        "slug": "sample-resource-5",
+        "body": "Sample resource\n\nChoose one useful idea, put it into practice, and reflect on what happened. Start with a small task that fits the time you have. Ask a buddy for specific feedback.\n\nThis page is demonstration content and can be edited or removed by the administrator.",
+        "description": "A sample learning resource from the Studybuddy demonstration collection.",
+        "status": "Draft",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      },
+      {
+        "id": "demo-page-5",
+        "title": "Your first small project",
+        "slug": "sample-resource-6",
+        "body": "Sample resource\n\nChoose one useful idea, put it into practice, and reflect on what happened. Start with a small task that fits the time you have. Ask a buddy for specific feedback.\n\nThis page is demonstration content and can be edited or removed by the administrator.",
+        "description": "A sample learning resource from the Studybuddy demonstration collection.",
+        "status": "Draft",
+        "isSample": true,
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z"
+      }
+    ]
+  }
+}
