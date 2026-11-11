@@ -1,6 +1,7 @@
 const serverless = require("serverless-http");
 const { app, initialize } = require("../../index");
 const dispatch = serverless(app);
+const { readiness } = require("../../readiness");
 exports.handler = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false;
   try {
@@ -18,14 +19,7 @@ exports.handler = async (event, context) => {
     };
     return await dispatch(request, context);
   } catch (error) {
-    let readinessCode = "DATABASE_STARTUP_FAILED";
-    if (error.code === 18 || error.codeName === "AuthenticationFailed")
-      readinessCode = "DATABASE_AUTH_FAILED";
-    else if (["ENOTFOUND", "EAI_AGAIN", "ECONNREFUSED"].includes(error.code))
-      readinessCode = "DATABASE_DNS_FAILED";
-    else if (error.name === "MongoServerSelectionError")
-      readinessCode = "DATABASE_UNREACHABLE";
-    else if (error.code === "CONFIG_MISSING") readinessCode = "CONFIG_MISSING";
+    const status = readiness(error);
     const isHealth = (event.path || event.rawPath || "").endsWith(
       "/api/health",
     );
@@ -38,7 +32,7 @@ exports.handler = async (event, context) => {
       },
       body: JSON.stringify({
         error: "The service is not configured or its database is unavailable.",
-        ...(isHealth ? { code: readinessCode } : {}),
+        ...(isHealth ? status : {}),
       }),
     };
   }
