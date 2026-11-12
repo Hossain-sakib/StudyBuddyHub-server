@@ -27,7 +27,7 @@ Netlify uses netlify/functions/api.js to initialize MongoDB before routing reque
 
 ## Administration and media
 
-ADMIN_EMAIL designates the bootstrap administrator. This role is assigned only after cryptographically verified Google sign-in for that exact email; password registration cannot claim it. Every admin endpoint rechecks the database-backed role. Modules: users, course metadata/first lesson and quiz editing, CMS pages, CRM contacts/leads, tasks, inventory, employees, invoices, moderation, activity logs and exports. Invoices store integer minor-unit amounts; this is not a certified accounting or payroll engine. Keep legal/tax/accounting workflows under a separate reviewed specification.
+ADMIN_EMAIL designates the bootstrap administrator. This role is assigned only after cryptographically verified Google sign-in for that exact email; password registration cannot claim it. Every admin endpoint rechecks the database-backed role. Modules: users, complete course, lesson and quiz editing, CMS pages, CRM contacts/leads, tasks, inventory, employees, invoices, moderation, activity logs and exports. Invoices store integer minor-unit amounts; this is not a certified accounting or payroll engine. Keep legal/tax/accounting workflows under a separate reviewed specification.
 
 Cloudinary handles binary file storage; MongoDB stores metadata only. Configure CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET (or CLOUDINARY_URL) in runtime settings. The SDK secret signs requests on the backend and is never sent to browsers. Uploads are admin-only, capped at 3 MB, and checked against PNG/JPEG/WebP/PDF signatures. Public uploads are restricted to images. Private file access is authorized before issuing a short-lived download URL. GridFS is not used. End-to-end provider upload/download testing requires the Cloudinary account settings and credentials; PDF delivery may require enabling that asset type in the Cloudinary account.
 
@@ -45,7 +45,7 @@ Run npm test for isolated API integration, seed repeatability, notification priv
 
 ## Recovery and email delivery
 
-Configure RESEND_API_KEY, MAIL_FROM (a sender on a domain verified in Resend), and APP_URL=https://studybuddy-hub.netlify.app. Use the Resend dashboard API Keys and Domains sections. No email is sent until these settings exist. The provider key stays server-side. No new mail dependency is required.
+Configure either Gmail/SMTP or Resend, plus MAIL_FROM and APP_URL=https://studybuddy-hub.netlify.app. Gmail does not require a custom domain. For Gmail use SMTP_HOST=smtp.gmail.com, SMTP_PORT=465, SMTP_USER=your Gmail address, SMTP_PASS=a Google app password, and MAIL_FROM=Studybuddy <your Gmail address>. Create the app password in Google Account → Security → 2-Step Verification → App passwords. Never use the normal Google account password. SMTP supports port 465 with implicit TLS or 587 with required STARTTLS and certificate validation. If SMTP is fully configured it takes priority over Resend. For Resend use RESEND_API_KEY and a sender on a domain verified in Resend (API Keys and Domains sections). No email is sent until these settings exist. The provider key stays server-side. No new mail dependency is required.
 
 POST /api/auth/forgot-password returns the same message for eligible and unknown accounts. Reset and verification tokens are 32 random bytes, stored only as SHA-256 hashes, expire after 30 minutes and are consumed once. Issuance has a per-account cooldown as well as IP rate limiting. POST /api/auth/reset-password changes a scrypt password and increments the session version, invalidating prior sessions. Google accounts retain Google sign-in; recovery does not add a password to them.
 
@@ -58,3 +58,7 @@ Courses support up to 50 lessons and 50 quiz questions. Validation checks every 
 POST /api/admin/leads/:id/convert creates one deterministic contact per lead and marks the lead won. POST /api/admin/inventory/:id/adjust applies a bounded integer stock change atomically in MongoDB, rejects negative stock and records the reason in the audit log. Admin summaries and filters support operational follow-up. These remain record-management workflows, not certified finance/payroll software.
 
 GET /resources/:slug serves published CMS records as escaped HTML with article metadata, canonical URLs and JSON-LD. GET /sitemap.xml reads only published pages. Drafts return 404. Deployment packaging supplies the compiled Tailwind stylesheet path through generated data/page-assets.json. No React boot is needed to read an article.
+
+Administrator account disabling increments the session version. Re-enabling an account allows fresh sign-in but never restores its older sessions. The administrator cannot disable their own account.
+
+Gmail delivery remains a real-provider release check until SMTP_PASS is supplied in Netlify. SMTP tests use a mocked transport; they verify routing, required TLS and cleanup rather than claiming a real email was delivered.

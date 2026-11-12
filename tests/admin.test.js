@@ -386,3 +386,51 @@ test("curriculum changes protect existing learner completion from shifted lesson
     200,
   );
 });
+
+test("disabling an account revokes old sessions even after an administrator enables it again", async () => {
+  const users = await (
+    await request("/api/admin/users", "GET", null, adminCookie)
+  ).json();
+  const learner = users.find((u) => u.email === "learner@example.com");
+  assert.ok(learner);
+  assert.equal(
+    (
+      await request(
+        "/api/admin/users/" + learner.id,
+        "PATCH",
+        { disabled: false },
+        adminCookie,
+      )
+    ).status,
+    200,
+  );
+  assert.equal(
+    (await request("/api/session", "GET", null, learnerCookie)).status,
+    401,
+  );
+  const fresh = await request("/api/auth/login", "POST", {
+    email: "learner@example.com",
+    password: "learner-test-password",
+  });
+  assert.equal(fresh.status, 200);
+  const cookie = fresh.headers.get("set-cookie").split(";")[0];
+  assert.equal(
+    (await request("/api/session", "GET", null, cookie)).status,
+    200,
+  );
+  assert.equal(
+    (
+      await request(
+        "/api/admin/users/" + learner.id,
+        "PATCH",
+        { disabled: true },
+        adminCookie,
+      )
+    ).status,
+    200,
+  );
+  assert.equal(
+    (await request("/api/session", "GET", null, cookie)).status,
+    401,
+  );
+});

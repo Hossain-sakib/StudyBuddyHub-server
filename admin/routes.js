@@ -150,7 +150,10 @@ module.exports = (app, { authenticated, handle, storage, persist }) => {
           .collection("users")
           .updateOne(
             { id: req.params.id, role: { $ne: "admin" } },
-            { $set: { disabled: req.body.disabled } },
+            {
+              $set: { disabled: req.body.disabled },
+              ...(req.body.disabled ? { $inc: { sessionVersion: 1 } } : {}),
+            },
           );
         if (!result.matchedCount)
           return res.status(404).json({
@@ -162,6 +165,8 @@ module.exports = (app, { authenticated, handle, storage, persist }) => {
         );
         if (!user) return res.status(404).json({ error: "Learner not found." });
         user.disabled = req.body.disabled;
+        if (req.body.disabled)
+          user.sessionVersion = (user.sessionVersion || 0) + 1;
         await persist();
       }
       await audit(
@@ -256,24 +261,20 @@ module.exports = (app, { authenticated, handle, storage, persist }) => {
           data.quiz.length !== (current.quiz || []).length;
         if (movingExistingLesson || changingQuizLength) {
           const hasProgress = db
-            ? (await db
-                .collection("states")
-                .countDocuments({
-                  $or: [
-                    { [`value.completed.${id}.0`]: { $exists: true } },
-                    { [`value.quizzes.${id}`]: { $exists: true } },
-                  ],
-                })) > 0
+            ? (await db.collection("states").countDocuments({
+                $or: [
+                  { [`value.completed.${id}.0`]: { $exists: true } },
+                  { [`value.quizzes.${id}`]: { $exists: true } },
+                ],
+              })) > 0
             : Object.values(fileData.states).some(
                 (state) => state.completed?.[id]?.length || state.quizzes?.[id],
               );
           if (hasProgress)
-            return res
-              .status(409)
-              .json({
-                error:
-                  "Learners already have progress in this course. Keep existing lesson positions and quiz length, or create a new course to change its structure.",
-              });
+            return res.status(409).json({
+              error:
+                "Learners already have progress in this course. Keep existing lesson positions and quiz length, or create a new course to change its structure.",
+            });
         }
       }
       if (!editing) Object.assign(data, { color: "purple", icon: "design" });
