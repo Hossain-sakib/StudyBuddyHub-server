@@ -1,3 +1,4 @@
+const mail = require("./mailer");
 const crypto = require("node:crypto");
 module.exports = function registerNotifications(
   app,
@@ -17,24 +18,46 @@ module.exports = function registerNotifications(
       createdAt: new Date().toISOString(),
     };
     const { db, fileData } = storage();
-    if (db)
-      await db
+    let inserted = false;
+    if (db) {
+      const result = await db
         .collection("notifications")
         .updateOne(
           { userId, key: event.key },
           { $setOnInsert: record },
           { upsert: true },
         );
-    else {
+      inserted = result.upsertedCount > 0;
+    } else {
       fileData.notifications ||= [];
       if (
         !fileData.notifications.some(
           (n) => n.userId === userId && n.key === event.key,
         )
       ) {
+        inserted = true;
         fileData.notifications.push(record);
         await persist();
       }
+    }
+    if (inserted && mail.configured()) {
+      const user = db
+        ? await db.collection("users").findOne({ id: userId })
+        : fileData.users.find((u) => u.id === userId);
+      if (
+        user &&
+        !user.disabled &&
+        user.emailNotifications &&
+        (user.emailVerified || user.provider === "google")
+      )
+        await mail
+          .send({
+            to: user.email,
+            subject: record.title,
+            text: `${record.body}\n\nOpen Studybuddy: ${mail.appUrl()}/#${record.target}\n\nManage email notifications in Settings.`,
+            key: record.id,
+          })
+          .catch(() => console.error("Notification email delivery failed"));
     }
   }
   app.get(

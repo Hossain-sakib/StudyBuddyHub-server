@@ -37,7 +37,18 @@ module.exports = (app, { authenticated, handle, storage, persist }) => {
     return db
       ? db
           .collection(collection)
-          .find({}, { projection: { _id: 0, hash: 0, salt: 0 } })
+          .find(
+            {},
+            {
+              projection: {
+                _id: 0,
+                hash: 0,
+                salt: 0,
+                resetHash: 0,
+                verifyHash: 0,
+              },
+            },
+          )
           .limit(500)
           .toArray()
       : collection === "users"
@@ -65,6 +76,7 @@ module.exports = (app, { authenticated, handle, storage, persist }) => {
       await persist();
     }
   }
+  require("./workflows")(app, { admin, handle, storage, persist, audit });
   app.get(
     "/api/admin/overview",
     ...admin,
@@ -226,59 +238,44 @@ module.exports = (app, { authenticated, handle, storage, persist }) => {
     const now = new Date().toISOString();
     const { db, fileData } = storage();
     if (req.params.resource === "courses") {
-      const current = editing
-        ? (await list("courses")).find((c) => c.id === id)
-        : null;
-      if (
-        !editing &&
-        (!data.lessonTitle ||
-          !data.lessonBody ||
-          !data.question ||
-          !data.answerOne ||
-          !data.answerTwo ||
-          !data.answerThree ||
-          !data.correctAnswer)
-      )
-        return res.status(400).json({
-          error:
-            "A new course needs a first lesson and a complete practice question.",
-        });
-      if (data.lessonBody)
-        data.lessons = [
-          {
-            title:
-              data.lessonTitle ||
-              current?.lessons?.[0]?.title ||
-              "Getting started",
-            body: data.lessonBody,
-          },
-          ...(current?.lessons?.slice(1) || []),
-        ];
-      if (
-        data.question &&
-        data.answerOne &&
-        data.answerTwo &&
-        data.answerThree &&
-        data.correctAnswer
-      )
-        data.quiz = [
-          {
-            question: data.question,
-            choices: [data.answerOne, data.answerTwo, data.answerThree],
-            answer: ["A", "B", "C"].indexOf(data.correctAnswer),
-          },
-          ...(current?.quiz?.slice(1) || []),
-        ];
-      for (const key of [
-        "lessonBody",
-        "lessonTitle",
-        "question",
-        "answerOne",
-        "answerTwo",
-        "answerThree",
-        "correctAnswer",
-      ])
-        delete data[key];
+      if (editing) {
+        const current = db
+          ? await db.collection("courses").findOne({ id })
+          : fileData.admin?.courses?.find((c) => c.id === id);
+        if (!current)
+          return res.status(404).json({ error: "Course not found." });
+        const movingExistingLesson =
+          data.lessons.length < (current.lessons || []).length ||
+          (current.lessons || []).some((lesson, index) => {
+            const next = data.lessons.findIndex(
+              (l) => l.title === lesson.title,
+            );
+            return next >= 0 && next !== index;
+          });
+        const changingQuizLength =
+          data.quiz.length !== (current.quiz || []).length;
+        if (movingExistingLesson || changingQuizLength) {
+          const hasProgress = db
+            ? (await db
+                .collection("states")
+                .countDocuments({
+                  $or: [
+                    { [`value.completed.${id}.0`]: { $exists: true } },
+                    { [`value.quizzes.${id}`]: { $exists: true } },
+                  ],
+                })) > 0
+            : Object.values(fileData.states).some(
+                (state) => state.completed?.[id]?.length || state.quizzes?.[id],
+              );
+          if (hasProgress)
+            return res
+              .status(409)
+              .json({
+                error:
+                  "Learners already have progress in this course. Keep existing lesson positions and quiz length, or create a new course to change its structure.",
+              });
+        }
+      }
       if (!editing) Object.assign(data, { color: "purple", icon: "design" });
     }
     const row = { ...data, updatedAt: now };

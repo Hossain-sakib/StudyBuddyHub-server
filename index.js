@@ -125,6 +125,21 @@ async function findUser(query) {
         Object.entries(query).every(([key, value]) => u[key] === value),
       );
 }
+async function availableCourses() {
+  if (db) {
+    const rows = await db
+      .collection("courses")
+      .find({}, { projection: { _id: 0 } })
+      .limit(1000)
+      .toArray();
+    return rows.length ? rows : catalog;
+  }
+  return [
+    ...new Map(
+      [...catalog, ...(fileData.admin?.courses || [])].map((c) => [c.id, c]),
+    ).values(),
+  ];
+}
 async function getState(id, name) {
   return db
     ? (await db.collection("states").findOne({ userId: id }))?.value ||
@@ -147,6 +162,9 @@ function publicUser(user, state) {
     name: state.name,
     email: user.email,
     role: user.role || "learner",
+    provider: user.provider || "password",
+    emailVerified: !!user.emailVerified || user.provider === "google",
+    emailNotifications: !!user.emailNotifications,
   };
 }
 function cookieOptions() {
@@ -161,8 +179,9 @@ function cookieOptions() {
 const handle = (fn) => (req, res, next) =>
   Promise.resolve(fn(req, res, next)).catch(next);
 const authenticated = handle(async (req, res, next) => {
+  let token;
   try {
-    const token = jwt.verify(req.cookies[tokenCookie] || "", secret, {
+    token = jwt.verify(req.cookies[tokenCookie] || "", secret, {
       algorithms: ["HS256"],
       issuer: "studybuddy",
     });
@@ -170,7 +189,11 @@ const authenticated = handle(async (req, res, next) => {
   } catch {
     return res.status(401).json({ error: "Sign in to continue." });
   }
-  if (!req.user || req.user.disabled)
+  if (
+    !req.user ||
+    req.user.disabled ||
+    (token.version || 0) !== (req.user.sessionVersion || 0)
+  )
     return res.status(401).json({ error: "Sign in to continue." });
   next();
 });
@@ -192,25 +215,27 @@ const notifyUser = require("./notifications")(app, {
   persist,
   getState,
 });
+require("./account")(app, {
+  authenticated,
+  handle,
+  rateLimit,
+  storage: () => ({ db, fileData }),
+  persist,
+  findUser,
+});
 app.get("/", (_, res) => res.send("StudyBuddy API is running"));
 app.get("/api/health", (_, res) =>
   res.json({
     status: "ok",
     storage: db ? "mongodb" : "local-file",
     persistentSessions: !!process.env.ACCESS_TOKEN_SECRET,
+    ...(sampleContent ? { sampleContent } : {}),
   }),
 );
 app.get(
   "/api/courses",
   handle(async (_, res) => {
-    const stored = db
-      ? await db
-          .collection("courses")
-          .find({}, { projection: { _id: 0 } })
-          .limit(100)
-          .toArray()
-      : [];
-    res.json(stored.length ? stored : catalog);
+    res.json(await availableCourses());
   }),
 );
 app.get(
@@ -286,7 +311,7 @@ app.post(
     await putState(user.id, state);
     res.cookie(
       tokenCookie,
-      jwt.sign({}, secret, {
+      jwt.sign({ version: user.sessionVersion || 0 }, secret, {
         algorithm: "HS256",
         subject: user.id,
         issuer: "studybuddy",
@@ -327,7 +352,7 @@ app.post(
     const state = await getState(user.id, user.name);
     res.cookie(
       tokenCookie,
-      jwt.sign({}, secret, {
+      jwt.sign({ version: user.sessionVersion || 0 }, secret, {
         algorithm: "HS256",
         subject: user.id,
         issuer: "studybuddy",
@@ -400,7 +425,7 @@ app.post(
     const state = await getState(user.id, user.name);
     res.cookie(
       tokenCookie,
-      jwt.sign({}, secret, {
+      jwt.sign({ version: user.sessionVersion || 0 }, secret, {
         algorithm: "HS256",
         subject: user.id,
         issuer: "studybuddy",
@@ -543,10 +568,7 @@ app.put(
   handle(async (req, res) => {
     let state;
     try {
-      const stored = db
-        ? await db.collection("courses").find({}).limit(100).toArray()
-        : [];
-      state = validateState(req.body, stored.length ? stored : catalog);
+      state = validateState(req.body, await availableCourses());
     } catch (error) {
       return res.status(400).json({ error: error.message });
     }
@@ -562,11 +584,8 @@ app.put(
           target: "progress",
         }).catch(() => {});
     for (const id of state.enrolled) {
-      const length = (
-        db
-          ? await db.collection("courses").findOne({ id })
-          : catalog.find((c) => c.id === id)
-      )?.lessons?.length;
+      const length = (await availableCourses()).find((c) => c.id === id)
+        ?.lessons?.length;
       if (
         length &&
         state.completed[id]?.length === length &&
@@ -649,6 +668,7 @@ require("./media/routes")(app, {
   handle,
   storage: () => ({ db, fileData }),
 });
+require("./cms")(app, { storage: () => ({ db, fileData }), handle });
 require("./admin/routes")(app, {
   authenticated,
   handle,
@@ -675,6 +695,7 @@ app.use((error, req, res, next) => {
   console.error("API request failed:", error.name);
   res.status(500).json({ error: "Something went wrong. Please try again." });
 });
+let sampleContent;
 let initialization;
 async function initialize() {
   if (!initialization)
@@ -726,6 +747,7 @@ async function initializeStorage() {
     await db.collection("seed_runs").createIndex({ id: 1 }, { unique: true });
     if (process.env.SEED_SAMPLE_CONTENT === "true") {
       const seeded = await require("./seed-samples").seedSamples(db);
+      sampleContent = { total: seeded.total, ready: true };
       console.log("Sample-content seed:", JSON.stringify(seeded));
     }
   } else {

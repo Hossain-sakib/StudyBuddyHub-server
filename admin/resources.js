@@ -114,13 +114,8 @@ const resources = {
       level: choice("Level", ["Beginner", "Intermediate", "All levels"]),
       teacher: text("Instructor"),
       duration: text("Duration"),
-      lessonTitle: text("First lesson title"),
-      lessonBody: area("First lesson content"),
-      question: text("First practice question"),
-      answerOne: text("Answer A"),
-      answerTwo: text("Answer B"),
-      answerThree: text("Answer C"),
-      correctAnswer: choice("Correct answer", ["A", "B", "C"]),
+      lessons: { label: "Lessons", type: "lessons", required: true },
+      quiz: { label: "Practice questions", type: "quiz", required: true },
     },
   },
 };
@@ -132,6 +127,42 @@ function validate(resource, input) {
     const raw = input[key];
     if (raw === undefined || raw === null || raw === "") {
       if (field.required) throw new Error(`${field.label} is required.`);
+      continue;
+    }
+    if (field.type === "lessons" || field.type === "quiz") {
+      if (!Array.isArray(raw) || !raw.length || raw.length > 50)
+        throw new Error(`${field.label} must contain 1–50 items.`);
+      const string = (v, max) =>
+        typeof v === "string" && v.trim().length > 0 && v.length <= max;
+      value[key] = raw.map((item) => {
+        if (!item || typeof item !== "object")
+          throw new Error(`Invalid ${field.label.toLowerCase()}.`);
+        if (field.type === "lessons") {
+          if (!string(item.title, 200) || !string(item.body, 10000))
+            throw new Error(
+              "Each lesson needs a title and content (up to 10,000 characters).",
+            );
+          return { title: item.title.trim(), body: item.body.trim() };
+        }
+        if (
+          !string(item.question, 500) ||
+          !Array.isArray(item.choices) ||
+          item.choices.length < 2 ||
+          item.choices.length > 6 ||
+          item.choices.some((c) => !string(c, 300)) ||
+          !Number.isInteger(item.answer) ||
+          item.answer < 0 ||
+          item.answer >= item.choices.length
+        )
+          throw new Error(
+            "Each question needs 2–6 answers and a valid correct answer.",
+          );
+        return {
+          question: item.question.trim(),
+          choices: item.choices.map((c) => c.trim()),
+          answer: item.answer,
+        };
+      });
       continue;
     }
     if (field.type === "number") {

@@ -19,7 +19,7 @@ Endpoints:
 - POST /api/assignments/:id/submissions (learner)
 - PATCH /api/assignments/:id/submissions/:userId (author grading)
 
-Quizzes are self-guided practice and scores are learner-managed, not secure examination results. Assignments include personal tasks and community challenges, with author-only edits/deletion, private submissions, peer grading and feedback. Community delivery uses polling. Password sign-in has no email verification or recovery flow. Administrator modules provide moderation and learning-content management. These must be addressed before a public production launch.
+Quizzes are self-guided practice and scores are learner-managed, not secure examination results. Assignments include personal tasks and community challenges, with author-only edits/deletion, private submissions, peer grading and feedback. Community delivery uses polling. Password sign-in supports optional email verification and single-use email recovery after an email provider is configured. Administrator modules provide moderation and learning-content management. These must be addressed before a public production launch.
 
 Run API integration tests with `node --test tests/api.test.js`. They use isolated temporary storage and do not touch real account data.
 
@@ -33,12 +33,28 @@ Cloudinary handles binary file storage; MongoDB stores metadata only. Configure 
 
 SEED_SAMPLE_CONTENT=true inserts 174 labeled demo records: 18 courses, 36 challenges, 30 discussion prompts, 20 contacts, 15 leads, 15 tasks, 12 inventory items, 10 employees, 12 invoices and 6 CMS pages. Insert-only upserts and a completion marker make retries safe. It preserves existing records. Disable after confirming the initial seed.
 
-Known release limits: no independent penetration test, malware-scanning service, disaster-recovery rehearsal, email recovery flow, or accounting/payroll certification. Dependency audit results are point-in-time evidence, not a guarantee of no vulnerabilities. Do not describe this application as risk-free.
+Known release limits: no independent penetration test, malware-scanning service, disaster-recovery rehearsal, or accounting/payroll certification. Dependency audit results are point-in-time evidence, not a guarantee of no vulnerabilities. Do not describe this application as risk-free.
 
 ## In-app notifications
 
 GET /api/notifications returns the authenticated user's latest 50 notifications and total unread count. PATCH /api/notifications/read marks all their notifications read; PATCH /api/notifications/:id marks one owned record. Cross-user records are inaccessible. Events use unique per-user keys to prevent duplicates. Indexes support inbox queries and event uniqueness.
 
-Events include welcome, personal-task due reminders, quiz results, course completion, new assignment submissions and grading feedback. Due reminders are derived when the inbox refreshes, using UTC dates. No scheduled email or browser push delivery is included.
+Events include welcome, personal-task due reminders, quiz results, course completion, new assignment submissions and grading feedback. Due reminders are derived when the inbox refreshes, using UTC dates. Optional email delivery is supported for verified accounts that opt in; browser push is not included. Reminders are generated on inbox refresh, rather than by an unattended scheduler.
 
 Run npm test for isolated API integration, seed repeatability, notification privacy and event checks. Regenerate the deterministic demo fixtures with node scripts/generate-demo-content.cjs; keep the frontend catalog synchronized if changing courses.
+
+## Recovery and email delivery
+
+Configure RESEND_API_KEY, MAIL_FROM (a sender on a domain verified in Resend), and APP_URL=https://studybuddy-hub.netlify.app. Use the Resend dashboard API Keys and Domains sections. No email is sent until these settings exist. The provider key stays server-side. No new mail dependency is required.
+
+POST /api/auth/forgot-password returns the same message for eligible and unknown accounts. Reset and verification tokens are 32 random bytes, stored only as SHA-256 hashes, expire after 30 minutes and are consumed once. Issuance has a per-account cooldown as well as IP rate limiting. POST /api/auth/reset-password changes a scrypt password and increments the session version, invalidating prior sessions. Google accounts retain Google sign-in; recovery does not add a password to them.
+
+POST /api/account/verification sends an authenticated verification request; POST /api/auth/verify-email consumes it. PATCH /api/account/preferences controls email notifications, which require a verified email. In-app notifications persist independently. Email notifications are best-effort immediate delivery; failures do not roll back the in-app inbox and there is no durable retry queue in this release. Email-provider tests use a mocked transport until real credentials are supplied.
+
+## Administration workflows and CMS
+
+Courses support up to 50 lessons and 50 quiz questions. Validation checks every lesson and answer. To preserve existing learner progress, structural edits that shift existing lesson positions or change quiz length are rejected once progress exists; create a new course for those changes. Text and metadata can still be improved.
+
+POST /api/admin/leads/:id/convert creates one deterministic contact per lead and marks the lead won. POST /api/admin/inventory/:id/adjust applies a bounded integer stock change atomically in MongoDB, rejects negative stock and records the reason in the audit log. Admin summaries and filters support operational follow-up. These remain record-management workflows, not certified finance/payroll software.
+
+GET /resources/:slug serves published CMS records as escaped HTML with article metadata, canonical URLs and JSON-LD. GET /sitemap.xml reads only published pages. Drafts return 404. Deployment packaging supplies the compiled Tailwind stylesheet path through generated data/page-assets.json. No React boot is needed to read an article.

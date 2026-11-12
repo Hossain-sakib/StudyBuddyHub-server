@@ -194,3 +194,195 @@ test("administrator manages validated business records and publishes CMS pages w
     401,
   );
 });
+
+test("complete curricula validate every lesson and question; lead conversion and stock adjustments are repeatable and bounded", async () => {
+  const course = {
+    title: "Complete course",
+    category: "Design",
+    lessons: [
+      { title: "One", body: "First content" },
+      { title: "Two", body: "Second content" },
+    ],
+    quiz: [
+      { question: "Choose one", choices: ["Yes", "No"], answer: 0 },
+      { question: "Choose two", choices: ["One", "Two", "Three"], answer: 1 },
+    ],
+  };
+  let result = await request(
+    "/api/admin/resources/courses",
+    "POST",
+    course,
+    adminCookie,
+  );
+  assert.equal(result.status, 201);
+  const row = await result.json();
+  assert.equal(row.lessons.length, 2);
+  assert.equal(row.quiz.length, 2);
+  result = await request(
+    "/api/admin/resources/courses/" + row.id,
+    "PUT",
+    { ...course, lessons: [...course.lessons].reverse() },
+    adminCookie,
+  );
+  assert.equal(result.status, 200);
+  assert.equal((await result.json()).lessons[0].title, "Two");
+  assert.equal(
+    (
+      await request(
+        "/api/admin/resources/courses",
+        "POST",
+        { ...course, quiz: [{ ...course.quiz[0], answer: 9 }] },
+        adminCookie,
+      )
+    ).status,
+    400,
+  );
+  assert.equal(
+    (
+      await request(
+        "/api/admin/resources/courses",
+        "POST",
+        { ...course, lessons: [] },
+        adminCookie,
+      )
+    ).status,
+    400,
+  );
+  const lead = await (
+    await request(
+      "/api/admin/resources/leads",
+      "POST",
+      { name: "Lead", email: "lead@example.com", status: "Qualified" },
+      adminCookie,
+    )
+  ).json();
+  const url = "/api/admin/leads/" + lead.id + "/convert";
+  assert.equal((await request(url, "POST", {}, learnerCookie)).status, 401);
+  const first = await (await request(url, "POST", {}, adminCookie)).json();
+  const second = await (await request(url, "POST", {}, adminCookie)).json();
+  assert.equal(first.id, second.id);
+  const contacts = await (
+    await request("/api/admin/resources/contacts", "GET", null, adminCookie)
+  ).json();
+  assert.equal(contacts.filter((c) => c.sourceLeadId === lead.id).length, 1);
+  const item = await (
+    await request(
+      "/api/admin/resources/inventory",
+      "POST",
+      { name: "Workbook", sku: "BOOK-1", quantity: 5, reorderAt: 2 },
+      adminCookie,
+    )
+  ).json();
+  const adjust = "/api/admin/inventory/" + item.id + "/adjust";
+  assert.equal(
+    (
+      await request(
+        adjust,
+        "POST",
+        { delta: -6, reason: "Too much" },
+        adminCookie,
+      )
+    ).status,
+    409,
+  );
+  const changed = await request(
+    adjust,
+    "POST",
+    { delta: -3, reason: "Workshop" },
+    adminCookie,
+  );
+  assert.equal(changed.status, 200);
+  assert.equal((await changed.json()).quantity, 2);
+  assert.equal(
+    (
+      await request(
+        adjust,
+        "POST",
+        { delta: 2.5, reason: "Invalid" },
+        adminCookie,
+      )
+    ).status,
+    400,
+  );
+});
+
+test("CMS article HTML and sitemap include only published pages with escaped content and per-page metadata", async () => {
+  const route = "/api/admin/resources/pages";
+  const page = {
+    title: "A <useful> guide",
+    slug: "seo-guide",
+    description: "A clear learning resource",
+    body: "<script>window.pwned=true</script>\n\nA useful paragraph.",
+    status: "Draft",
+  };
+  const row = await (await request(route, "POST", page, adminCookie)).json();
+  assert.equal((await request("/resources/seo-guide")).status, 404);
+  assert.ok(
+    !(await (await request("/sitemap.xml")).text()).includes("seo-guide"),
+  );
+  assert.equal(
+    (
+      await request(
+        route + "/" + row.id,
+        "PUT",
+        { ...page, status: "Published" },
+        adminCookie,
+      )
+    ).status,
+    200,
+  );
+  const html = await (await request("/resources/seo-guide")).text();
+  assert.ok(
+    html.includes("<title>A &lt;useful&gt; guide — Studybuddy</title>"),
+  );
+  assert.ok(html.includes("&lt;script&gt;window.pwned=true&lt;/script&gt;"));
+  assert.ok(!html.includes("<script>window.pwned"));
+  assert.ok(html.includes('rel="canonical"'));
+  assert.ok(html.includes("application/ld+json"));
+  assert.ok(
+    (await (await request("/sitemap.xml")).text()).includes(
+      "/resources/seo-guide",
+    ),
+  );
+});
+
+test("curriculum changes protect existing learner completion from shifted lesson positions", async () => {
+  const courses = await (
+    await request("/api/admin/resources/courses", "GET", null, adminCookie)
+  ).json();
+  const course = courses.find((c) => c.title === "Complete course");
+  assert.ok(course);
+  const response = await request("/api/auth/register", "POST", {
+    name: "Course Learner",
+    email: "course-learner@example.com",
+    password: "course-test-password",
+  });
+  assert.equal(response.status, 201);
+  const cookie = response.headers.get("set-cookie").split(";")[0];
+  const { state } = await response.json();
+  state.enrolled = [course.id];
+  state.completed = { [course.id]: [0] };
+  assert.equal((await request("/api/state", "PUT", state, cookie)).status, 200);
+  assert.equal(
+    (
+      await request(
+        "/api/admin/resources/courses/" + course.id,
+        "PUT",
+        { ...course, lessons: [...course.lessons].reverse() },
+        adminCookie,
+      )
+    ).status,
+    409,
+  );
+  assert.equal(
+    (
+      await request(
+        "/api/admin/resources/courses/" + course.id,
+        "PUT",
+        { ...course, description: "Improved description" },
+        adminCookie,
+      )
+    ).status,
+    200,
+  );
+});
