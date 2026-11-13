@@ -434,3 +434,46 @@ test("disabling an account revokes old sessions even after an administrator enab
     401,
   );
 });
+
+test("public course pages and catalog summaries provide indexable content without shipping practice answers", async () => {
+  const response = await request("/api/catalog");
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("x-robots-tag"), "noindex");
+  const catalog = await response.json();
+  assert.ok(catalog.length >= 18);
+  assert.ok(
+    catalog.every(
+      (c) =>
+        !("quiz" in c) &&
+        c.lessons.every((l) => Object.keys(l).join(",") === "title"),
+    ),
+  );
+  const course = catalog.find((c) => c.id === "design");
+  assert.ok(course);
+  const html = await (await request("/courses/design")).text();
+  assert.ok(html.includes("<h1"));
+  assert.ok(html.includes(course.title));
+  assert.ok(html.includes("/courses/design"));
+  assert.ok(html.includes('rel="canonical"'));
+  const graph = JSON.parse(
+    html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1],
+  );
+  assert.equal(graph["@graph"][0]["@type"], "Course");
+  assert.equal(graph["@graph"][0].name, course.title);
+  const missing = await request("/courses/does-not-exist");
+  assert.equal(missing.status, 404);
+  assert.ok((await missing.text()).includes("noindex,follow"));
+  const sitemap = await (await request("/sitemap.xml")).text();
+  assert.ok(sitemap.includes("/courses/design"));
+  assert.ok(sitemap.includes("<lastmod>"));
+  const { render } = require("../public-routes");
+  const title = 'A <clear> "guide"';
+  const article = render(
+    { title, slug: "escaped-guide", body: "Safe text" },
+    "/assets/test.css",
+  );
+  const data = JSON.parse(
+    article.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1],
+  );
+  assert.equal(data["@graph"][0].headline, title);
+});

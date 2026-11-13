@@ -27,6 +27,7 @@ app.disable("x-powered-by");
 app.use((req, res, next) => {
   res.set("X-Content-Type-Options", "nosniff");
   res.set("Cache-Control", "no-store");
+  if (req.path.startsWith("/api/")) res.set("X-Robots-Tag", "noindex");
   next();
 });
 app.use(cors({ origin: origins, credentials: true }));
@@ -236,6 +237,24 @@ app.get(
   "/api/courses",
   handle(async (_, res) => {
     res.json(await availableCourses());
+  }),
+);
+app.get(
+  "/api/catalog",
+  handle(async (_, res) => {
+    const rows = db
+      ? await db
+          .collection("courses")
+          .find({}, { projection: { _id: 0, quiz: 0, "lessons.body": 0 } })
+          .limit(1000)
+          .toArray()
+      : await availableCourses();
+    res.json(
+      rows.map(({ quiz, lessons, ...course }) => ({
+        ...course,
+        lessons: (lessons || []).map(({ title }) => ({ title })),
+      })),
+    );
   }),
 );
 app.get(
@@ -668,7 +687,7 @@ require("./media/routes")(app, {
   handle,
   storage: () => ({ db, fileData }),
 });
-require("./cms")(app, { storage: () => ({ db, fileData }), handle });
+require("./public-routes")(app, { storage: () => ({ db, fileData }), handle });
 require("./admin/routes")(app, {
   authenticated,
   handle,
@@ -725,26 +744,26 @@ async function initializeStorage() {
     await mongo.connect();
     db = mongo.db("studybuddy");
     await db.command({ ping: 1 });
-    await db.collection("users").createIndex({ email: 1 }, { unique: true });
-    await db
-      .collection("users")
-      .createIndex({ firebaseUid: 1 }, { unique: true, sparse: true });
-    await db.collection("states").createIndex({ userId: 1 }, { unique: true });
-    await db.collection("assignments").createIndex({ id: 1 }, { unique: true });
-    await db.collection("messages").createIndex({ room: 1, createdAt: -1 });
-    await db
-      .collection("auth_limits")
-      .createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 });
-    await db
-      .collection("notifications")
-      .createIndex({ userId: 1, key: 1 }, { unique: true });
-    await db
-      .collection("notifications")
-      .createIndex({ userId: 1, createdAt: -1 });
-    await db.collection("audit_logs").createIndex({ createdAt: -1 });
-    await db.collection("cms_pages").createIndex({ slug: 1 }, { unique: true });
-    await db.collection("courses").createIndex({ id: 1 }, { unique: true });
-    await db.collection("seed_runs").createIndex({ id: 1 }, { unique: true });
+    await Promise.all([
+      db.collection("users").createIndex({ email: 1 }, { unique: true }),
+      db
+        .collection("users")
+        .createIndex({ firebaseUid: 1 }, { unique: true, sparse: true }),
+      db.collection("states").createIndex({ userId: 1 }, { unique: true }),
+      db.collection("assignments").createIndex({ id: 1 }, { unique: true }),
+      db.collection("messages").createIndex({ room: 1, createdAt: -1 }),
+      db
+        .collection("auth_limits")
+        .createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 }),
+      db
+        .collection("notifications")
+        .createIndex({ userId: 1, key: 1 }, { unique: true }),
+      db.collection("notifications").createIndex({ userId: 1, createdAt: -1 }),
+      db.collection("audit_logs").createIndex({ createdAt: -1 }),
+      db.collection("cms_pages").createIndex({ slug: 1 }, { unique: true }),
+      db.collection("courses").createIndex({ id: 1 }, { unique: true }),
+      db.collection("seed_runs").createIndex({ id: 1 }, { unique: true }),
+    ]);
     if (process.env.SEED_SAMPLE_CONTENT === "true") {
       const seeded = await require("./seed-samples").seedSamples(db);
       sampleContent = { total: seeded.total, ready: true };

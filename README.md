@@ -62,3 +62,9 @@ GET /resources/:slug serves published CMS records as escaped HTML with article m
 Administrator account disabling increments the session version. Re-enabling an account allows fresh sign-in but never restores its older sessions. The administrator cannot disable their own account.
 
 Gmail delivery remains a real-provider release check until SMTP_PASS is supplied in Netlify. SMTP tests use a mocked transport; they verify routing, required TLS and cleanup rather than claiming a real email was delivered.
+
+## Public rendering and speed
+
+public-routes.js handles crawlable course/article URLs and the published-only sitemap. public-pages.js owns shared escaping, metadata and the server-rendered HTML shell. Public course summaries use GET /api/catalog; lesson bodies and quiz payloads are omitted. The learner workspace continues using GET /api/courses. JSON API responses carry X-Robots-Tag: noindex.
+
+Course detail and CMS detail requests use indexed lookups. Independent startup index checks run concurrently. Public pages remain immediately database-backed; private account responses are never cached.
